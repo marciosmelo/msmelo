@@ -1,6 +1,10 @@
+{{ with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{ end }}
+
 {{ define "main" }}
   <main>
-    <small>Texto de <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ time.Format "2 de January de 2006" .Date }}</time></small>
+    <small>Publicado em <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ time.Format "2 de January de 2006" .Date }}</time></small>
     {{ .Content }}
   </main>
 {{ end }}

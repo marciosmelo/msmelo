@@ -5,9 +5,9 @@ description: "Compartilhando minhas histórias, publicações e experiências."
 
 # Bem-vindo ao Meu Sítio 🏡
 
-Olá! Eu sou **M. S. Melo**, um baiano natural da gloriosa Conceição do Almeida. Durante o dia sou engenheiro de software, mas nas horas vagas me transformo em um contador de histórias.
+Olá! Eu sou **M. S. Melo**, um baiano natural da gloriosa Conceição do Almeida. Nas horas vagas me transformo em um contador de histórias.
 
-Criei esse site para ter **tudo o que escrevo e publico num lugar só meu**. Sem a mão invisível do mercado ou a mercê algoritmos capitalistas. 
+Criei esse site para ter **tudo o que escrevo e publico num lugar só meu**. Sem a mão invisível do mercado ou a mercê de algoritmos capitalistas. 
 
 ## Sobre Mim 💡
 
@@ -24,7 +24,10 @@ Já sobrevivi a [uma queda de um carro em movimento](https://marciosmelo.substac
 
 ---
 
+[Veja minhas últimas postagens](/posts/)
+
+[Assine nosso RSS](/index.xml)
+
+---
 *“A tradição de todas as gerações mortas oprime como um pesadelo o cérebro dos vivos.”* 
 (**Karl Marx**)
-
-[Veja minhas últimas postagens](/posts/)
