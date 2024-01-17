@@ -1,0 +1,25 @@
+baseURL = 'https://msmelo.site/'
+languageCode = 'pt-br'
+defaultContentLanguage = 'pt-br'
+title = 'M. S. Melo (Blog)'
+disableKinds = ['taxonomy']
+
+[menu]
+  [[menu.main]]
+        identifier = 'blog'
+        name = '📝 Blog'
+        url = '/posts/'
+        weight = 3
+        
+  [[menu.main]]
+        identifier = 'section'
+        name = '📕 Livros'
+        url = '/livros/'
+        weight = 2
+
+
+  [[menu.main]]
+        identifier = 'home'
+        name = '🏠 Início'
+        url = '/'
+        weight = 1
