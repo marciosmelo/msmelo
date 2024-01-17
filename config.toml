@@ -23,3 +23,9 @@ disableKinds = ['taxonomy']
         name = '🏠 Início'
         url = '/'
         weight = 1
+
+[outputs]
+  home = ['html', 'rss']
+  section = ['html', 'rss']
+  taxonomy = ['html']
+  term = ['html']
