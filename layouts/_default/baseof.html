@@ -8,12 +8,12 @@
   <link rel="icon" href="/images/favicon.png">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Crie a Porra de um Blog">
-  <meta property="og:image" content="https://crieaporradeum.blog/images/card.png">
-  <meta property="og:url" content="https://crieaporradeum.blog/">
+  <meta property="og:title" content="M. S. Melo">
+  <!-- <meta property="og:image" content="https://crieaporradeum.blog/images/card.png"> -->
+  <meta property="og:url" content="https://msmelo.blog/">
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Crie a Porra de um Blog">
-  <meta property="og:description" content="Crie a porra de um blog agora. É a melhor coisa que você pode fazer na web.">
+  <meta property="og:site_name" content="M. S. Melo - Blog">
+  <meta property="og:description" content="Escrevo, desenho e escovo bits.">
 </head>
 <body>
   <header>
@@ -23,7 +23,12 @@
   </header>
   {{ block "main" . }}{{ end }}
   <footer>
-    <p><i>Este sítio é uma adaptação de</i> <a href="https://crieaporradeum.blog/">Crie a Porra de um Blog</a>.</p>
-  </footer>
+    {{ if .Params.post_footer }}
+        <p><strong>Escrito por M. S. Melo.</strong> | <a href="https://msmelo.blog/posts/">Veja a lista de Posts.</a></p>
+    {{ else }}
+        <!-- Conteúdo padrão do rodapé -->
+        <p><i>Este sítio é uma adaptação de</i> <a href="https://crieaporradeum.blog/">Crie a Porra de um Blog</a>.</p>
+    {{ end }}
+</footer>
 </body>
 </html>

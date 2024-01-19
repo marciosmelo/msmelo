@@ -3,6 +3,7 @@ title: "Ela Tinha Medo"
 date: 2024-01-18T08:47:59-03:00
 author: M. S. Melo
 draft: false
+post_footer: true
 ---
 Ela tinha medo das coisas mais mundanas até as impossíveis. Tinha medo de escorregar, de andar descalça, **medo da água que encostava na sanduicheira elétrica**, da cafeteira explodir, de usar panela de pressão, de tomadas mal encaixadas e de fios aparentes. **Medo de deixar a televisão ligada, de tomar café muito forte, de tomar café à noite, de comer comida pronta, de viajar sem levar sua própria comida.**
 

@@ -5,6 +5,7 @@ author: M. S. Melo
 subtitle: Cometi um blog e você pode fazer a porra de um também!
 slug: ola-mundo
 draft: false
+post_footer: true
 ---
 Olá mundo, este é o meu novo **sítio particular**. 
 
