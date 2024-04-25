@@ -1,8 +1,0 @@
-<nav>
-  {{ $permalink := .Permalink | relURL }}
-  {{ with .Site.Menus.main }}
-    {{ range . }}
-    <a href="{{ .URL | relURL }}" class="{{ if eq $permalink  (.URL | relURL) }}current{{ end }}">{{ .Name }}</a>
-    {{ end }}
-  {{ end }}
-</nav>
