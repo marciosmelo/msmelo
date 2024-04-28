@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contos Soteropolitanos on MSMelo.Blog</title>
+    <link>https://msmelo.blog/series/contos-soteropolitanos/</link>
+    <description>Recent content in Contos Soteropolitanos on MSMelo.Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ :thinking_face:</copyright>
+    <lastBuildDate>Sat, 27 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://msmelo.blog/series/contos-soteropolitanos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Saída Rápida Pela Esquerda</title>
+      <link>https://msmelo.blog/posts/saida-rapida/</link>
+      <pubDate>Sat, 27 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://msmelo.blog/posts/saida-rapida/</guid>
+      <description>O trenzinho da sacanagem</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://msmelo.blog/posts/saida-rapida/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Delito de Amor em Salvador</title>
+      <link>https://msmelo.blog/posts/delito-amor-salvador/</link>
+      <pubDate>Fri, 26 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://msmelo.blog/posts/delito-amor-salvador/</guid>
+      <description>Se amar demais for crime, prenda nós tudo aqui!</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://msmelo.blog/posts/delito-amor-salvador/featured.jpg" />
+    </item>
+    
+  </channel>
+</rss>

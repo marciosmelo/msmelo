@@ -1,0 +1,66 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "MSMelo.Blog"
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+description = "Escritor, desenhista, detetive de código."
+copyright = "Copy, _right?_ :thinking_face:"
+# logo = "img/msmelo-logo-white.png"
+# secondaryLogo = "img/msmelo-logo-black.png"
+
+[author]
+name = "M.S.Melo"
+image = "eu-autor.jpg"
+headline = "Bairrista praticante, especialista em procrastinação. Escrevo nas horas vagas."
+bio = "Baiano natural de Conceição do Almeida, sou detetive de código em horário comercial, nas horas vagas me transformo em um contador de histórias. Bairrista praticante, procrastino sem pressa."
+links = [
+    { email = "mailto:msmelo.author@skiff.com" },
+    { link = "https://pocilga.com/" },
+#     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
+#     { apple = "https://www.apple.com" },
+#     { blogger = "https://username.blogspot.com/" },
+    { bluesky = "https://bsky.app/profile/marciosmelo.bsky.social" },
+#     { codepen = "https://codepen.io/username" },
+#     { dev = "https://dev.to/username" },
+#     { discord = "https://discord.gg/invitecode" },
+#     { dribbble = "https://dribbble.com/username" },
+#     { facebook = "https://facebook.com/username" },
+    { flickr = "https://www.flickr.com/photos/mmelo/" },
+#     { foursquare = "https://foursquare.com/username" },
+    { github = "https://github.com/marciosmelo" },
+#     { gitlab = "https://gitlab.com/username" },
+#     { google = "https://www.google.com/" },
+#     { hashnode = "https://username.hashnode.dev" },
+    { instagram = "https://instagram.com/marciosmelo" },
+#     { keybase = "https://keybase.io/username" },
+#     { kickstarter = "https://www.kickstarter.com/profile/username" },
+    { lastfm = "https://www.last.fm/pt/user/marciosmelo" },
+    { linkedin = "https://linkedin.com/in/marciomelo" },
+    { mastodon = "https://ursal.zone/@xrpz" },
+#     { medium = "https://medium.com/username" },
+#     { microsoft = "https://www.microsoft.com/" },
+#     { orcid = "https://orcid.org/userid" },
+#     { patreon = "https://www.patreon.com/username" },
+    { pinterest = "https://pinterest.com/xaropzz" },
+#     { reddit = "https://reddit.com/user/username" },
+#     { researchgate = "https://www.researchgate.net/profile/username" },
+#     { slack = "https://workspace.url/team/userid" },
+#     { snapchat = "https://snapchat.com/add/username" },
+#     { soundcloud = "https://soundcloud.com/username" },
+#     { stack-overflow = "https://stackoverflow.com/users/userid/username" },
+#     { steam = "https://steamcommunity.com/profiles/userid" },
+    { telegram = "https://t.me/marciosmelo" },
+#     { tiktok = "https://tiktok.com/@username" },
+#     { tumblr = "https://username.tumblr.com" },
+#     { twitch = "https://twitch.tv/username" },
+#     { twitter = "https://twitter.com/username" },
+#     { x-twitter = "https://twitter.com/username" },
+#     { whatsapp = "https://wa.me/phone-number" },
+#     { youtube = "https://youtube.com/username" },
+#     { ko-fi = "https://ko-fi.com/username" },
+]

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pandemia on MSMelo.Blog</title>
+    <link>https://msmelo.blog/tags/pandemia/</link>
+    <description>Recent content in pandemia on MSMelo.Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ :thinking_face:</copyright>
+    <lastBuildDate>Sat, 30 Mar 2024 11:55:59 -0300</lastBuildDate><atom:link href="https://msmelo.blog/tags/pandemia/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Remorto</title>
+      <link>https://msmelo.blog/posts/remorto/</link>
+      <pubDate>Sat, 30 Mar 2024 11:55:59 -0300</pubDate>
+      
+      <guid>https://msmelo.blog/posts/remorto/</guid>
+      <description>Daqui de dentro eu vejo tudo o que vocês ouvem.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://msmelo.blog/posts/remorto/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Liberando espaço na memória</title>
+      <link>https://msmelo.blog/posts/liberando-espaco-memoria/</link>
+      <pubDate>Fri, 01 Mar 2024 03:55:59 -0300</pubDate>
+      
+      <guid>https://msmelo.blog/posts/liberando-espaco-memoria/</guid>
+      <description>Lembraças malditas em abas que se acumulam.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://msmelo.blog/posts/liberando-espaco-memoria/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Escrever todos os dias</title>
+      <link>https://msmelo.blog/posts/escrever-todos-dias/</link>
+      <pubDate>Mon, 26 Feb 2024 03:55:59 -0300</pubDate>
+      
+      <guid>https://msmelo.blog/posts/escrever-todos-dias/</guid>
+      <description>Era uma vez uma pessoa que não conseguia escrever um novo texto.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://msmelo.blog/posts/escrever-todos-dias/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Um dia eu termino, hoje não</title>
+      <link>https://msmelo.blog/posts/um-dia-termino/</link>
+      <pubDate>Mon, 19 Feb 2024 03:55:59 -0300</pubDate>
+      
+      <guid>https://msmelo.blog/posts/um-dia-termino/</guid>
+      <description>Meus contos inacabados nunca darão um livro.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://msmelo.blog/posts/um-dia-termino/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Revisões Mentais</title>
+      <link>https://msmelo.blog/posts/revisoes-mentais/</link>
+      <pubDate>Mon, 05 Feb 2024 11:55:59 -0300</pubDate>
+      
+      <guid>https://msmelo.blog/posts/revisoes-mentais/</guid>
+      <description>Sobre braços curtos e botões que mudam de lugar.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://msmelo.blog/posts/revisoes-mentais/featured.jpg" />
+    </item>
+    
+  </channel>
+</rss>
