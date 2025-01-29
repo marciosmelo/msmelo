@@ -8,7 +8,5 @@ cascade:
   invertPagination: true
 ---
 
-{{< lead >}}
 Lista com todos os meus posts.
-{{< /lead >}}
 

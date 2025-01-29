@@ -8,11 +8,9 @@ cascade:
   hideFeatureImage: false
 ---
 
-{{< lead >}}
 A verdadeira resistência da internet
-{{< /lead >}}
 
-Mais blogs para você visitar, conhecer e adicionar ao seu leitor RSS :memo: 
+Mais blogs para você visitar, conhecer e adicionar ao seu leitor RSS 
 
 - [Blog do Cadu Silva](https://blog.cadusilva.com/)
 - [Daniely Silva](https://danielysilva.com.br/)

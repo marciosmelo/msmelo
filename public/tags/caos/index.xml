@@ -6,18 +6,14 @@
     <description>Recent content in Caos on MSMelo.Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Thu, 24 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://msmelo.blog/tags/caos/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Thu, 24 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://msmelo.blog/tags/caos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fator K</title>
       <link>https://msmelo.blog/posts/literoutubro/fatork/</link>
       <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://msmelo.blog/posts/literoutubro/fatork/</guid>
       <description>Karin descobre o segredo do universo.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://msmelo.blog/posts/literoutubro/fatork/featured.png" />
     </item>
-    
   </channel>
 </rss>
