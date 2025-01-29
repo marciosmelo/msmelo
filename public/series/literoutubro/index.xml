@@ -2,40 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Literoutubro on MSMelo.Blog</title>
-    <link>http://localhost:1313/series/literoutubro/</link>
+    <link>https://msmelo.blog/series/literoutubro/</link>
     <description>Recent content in Literoutubro on MSMelo.Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Wed, 13 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/series/literoutubro/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://msmelo.blog/series/literoutubro/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Artifício</title>
+      <link>https://msmelo.blog/posts/literoutubro/artificio/</link>
+      <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://msmelo.blog/posts/literoutubro/artificio/</guid>
+      <description>O silêncio das palavras perfeitas</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://msmelo.blog/posts/literoutubro/artificio/featured-artificio.jpg" />
+    </item>
+    
     <item>
       <title>Caos</title>
-      <link>http://localhost:1313/posts/literoutubro/caos/</link>
+      <link>https://msmelo.blog/posts/literoutubro/caos/</link>
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/literoutubro/caos/</guid>
+      <guid>https://msmelo.blog/posts/literoutubro/caos/</guid>
       <description>O tempo ressoa com o eco das coisas mal feitas</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/literoutubro/caos/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://msmelo.blog/posts/literoutubro/caos/featured.jpg" />
     </item>
     
     <item>
       <title>Fator K</title>
-      <link>http://localhost:1313/posts/literoutubro/fatork/</link>
+      <link>https://msmelo.blog/posts/literoutubro/fatork/</link>
       <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/literoutubro/fatork/</guid>
+      <guid>https://msmelo.blog/posts/literoutubro/fatork/</guid>
       <description>Karin descobre o segredo do universo.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/literoutubro/fatork/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://msmelo.blog/posts/literoutubro/fatork/featured.png" />
     </item>
     
     <item>
       <title>Heterocromia</title>
-      <link>http://localhost:1313/posts/literoutubro/heterocromia/</link>
+      <link>https://msmelo.blog/posts/literoutubro/heterocromia/</link>
       <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/literoutubro/heterocromia/</guid>
+      <guid>https://msmelo.blog/posts/literoutubro/heterocromia/</guid>
       <description>Memória de sangue</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/literoutubro/heterocromia/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://msmelo.blog/posts/literoutubro/heterocromia/featured.jpg" />
     </item>
     
   </channel>
