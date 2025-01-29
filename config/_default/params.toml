@@ -14,6 +14,7 @@ smartTOCHideUnfocusedChildren = false
 
 [header]
 layout = "fixed"
+showAuthor=true
 
 [footer]
 showMenu = true
@@ -25,6 +26,7 @@ showScrollToTop = true
 [homepage]
 layout = "background"
 homepageImage = "/img/porto.jpg"
+showAuthor = true
 showRecent = true
 showRecentItems = "10"
 showMoreLink = true

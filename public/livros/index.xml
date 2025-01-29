@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Livros on MSMelo.Blog</title>
-    <link>https://msmelo.blog/livros/</link>
+    <link>http://localhost:1313/livros/</link>
     <description>Recent content in Livros on MSMelo.Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Sun, 21 Jan 2024 22:23:05 -0300</lastBuildDate><atom:link href="https://msmelo.blog/livros/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Jan 2024 22:23:05 -0300</lastBuildDate><atom:link href="http://localhost:1313/livros/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -19,7 +19,7 @@ Já sobrevivi a [uma queda de um carro em movimento](https://marciosmelo.substac
 
 ## Onde me Encontrar 🕵🏽‍♂️
 
-- Mastodon: [@xrpz@ursal.zone](https://ursal.zone/@xrpz)
+- Mastodon: [@msmelo@bolha.one](https://bolha.one/@msmelo)
 - Newsletter: [Assine minha newsletter](https://marciosmelo.substack.com)
 
 ---
