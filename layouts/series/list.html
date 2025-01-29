@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="series-header">
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Params.description }}</p>
+</div>
+
+<div class="series-posts">
+    <ul>
+        {{ range .Pages }}
+        <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            <p>{{ .Summary }}</p>
+        </li>
+        {{ end }}
+    </ul>
+</div>
+{{ end }}

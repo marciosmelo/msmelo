@@ -1,0 +1,50 @@
+[[main]]
+none = "none"
+
+[[main]]
+name = "Blog"
+pageRef = "posts"
+identifier = "CYwQUovV28"
+weight = 1
+
+[[main]]
+name = "Livros"
+pageRef = "livros"
+identifier = "aS5b0eLsPN"
+weight = 2
+
+[[main]]
+name = "Blogroll"
+pageRef = "/blogroll"
+identifier = "ihvVhq0Ho2"
+weight = 3
+
+[[main]]
+name = "Sobre"
+pageRef = "/sobre"
+identifier = "oxhUFdW53b"
+weight = 4
+
+[[main]]
+pre = "rss"
+pageRef = "/index.xml"
+identifier = "8gTiR4lXGf"
+weight = 9999
+
+[[main]]
+pre = "mastodon"
+url = "https://ursal.zone/@xrpz"
+identifier = "k3GdUHWXE1"
+weight = 9999
+
+[[main]]
+pre = "substack"
+url = "https://marciosmelo.substack.com"
+identifier = "FBUHAsXrD7"
+weight = 9999
+
+ [[footer]]
+   name = "Tags"
+   pageRef = "tags"
+   weight = 10
+
