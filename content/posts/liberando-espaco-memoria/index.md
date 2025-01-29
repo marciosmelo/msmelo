@@ -22,4 +22,4 @@ Se tudo parecer lento, se o ano que sempre passou rápido está, dessa vez, se a
 ---
 📅 Escrito originalmente no dia **2 de junho de 2020**.
 
-📷 Foto de [Jackson Simmer]("https://unsplash.com/photos/blue-orange-green-and-yellow-plastic-toy-ZxRHtPacwUY)
+📷 Foto de [Jackson Simmer](https://unsplash.com/photos/blue-orange-green-and-yellow-plastic-toy-ZxRHtPacwUY)

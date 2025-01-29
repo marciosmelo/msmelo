@@ -10,9 +10,7 @@ cascade:
   invertPagination: true
 ---
 
-{{< lead >}}
 Minhas histórias publicadas em ebooks e livros por aí.
-{{< /lead >}}
 
 # Ebooks de M. S. Melo
 

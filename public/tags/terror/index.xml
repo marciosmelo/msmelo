@@ -6,18 +6,14 @@
     <description>Recent content in Terror on MSMelo.Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copy, _right?_ :thinking_face:</copyright>
-    <lastBuildDate>Sun, 03 Mar 2024 03:55:59 -0300</lastBuildDate><atom:link href="https://msmelo.blog/tags/terror/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sun, 03 Mar 2024 03:55:59 -0300</lastBuildDate>
+    <atom:link href="https://msmelo.blog/tags/terror/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A casa ao lado</title>
       <link>https://msmelo.blog/posts/um-sonho-ruim/</link>
       <pubDate>Sun, 03 Mar 2024 03:55:59 -0300</pubDate>
-      
       <guid>https://msmelo.blog/posts/um-sonho-ruim/</guid>
       <description>Um sonho (ruim)</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://msmelo.blog/posts/um-sonho-ruim/featured.jpeg" />
     </item>
-    
   </channel>
 </rss>
