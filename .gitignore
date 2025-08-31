@@ -1,1 +1,15 @@
-./public
+# Ignora a pasta 'public' gerada pelo Hugo
+public/
+
+# Ignora arquivos temporários e de build do Hugo
+resources/
+hugo_stats.json
+
+# Ignora arquivos de sistema comuns
+.DS_Store
+Thumbs.db
+
+# Ignora arquivos de backup do editor
+*~
+*.swp
+*.swo
