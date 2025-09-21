@@ -1,3 +1,4 @@
 [hugoVersion]
-  extended = false
-  min = "0.87.0"
+  # Necessário para funções mais novas de templates usadas pelo tema Blowfish
+  extended = true
+  min = "0.150.0"
