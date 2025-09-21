@@ -1,0 +1,75 @@
+name: Deploy to Hostinger (FTP)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      # Controle central: mude para 'true' quando quiser limpeza completa (remove arquivos que não estão no build atual)
+      CLEAN_SLATE: 'false'
+      # Tag opcional para rastrear deploy (aparece nos logs e você pode buscar em analytics)
+      DEPLOY_TAG: 'hostinger-ftp'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.129.0'
+          extended: true
+
+      - name: Build
+        run: |
+          echo "[info] Iniciando build Hugo"
+          hugo --minify
+          echo "[info] Tamanho resultante public/" && du -sh public || true
+
+      - name: Deploy via FTP (safe mode)
+        if: env.CLEAN_SLATE == 'false'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOSTINGER_FTP_HOST }}
+          username: ${{ secrets.HOSTINGER_FTP_USER }}
+          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
+          local-dir: public/
+          server-dir: ${{ secrets.HOSTINGER_FTP_REMOTE_DIR }}/
+          log-level: verbose
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.github*
+            **/README.md
+            **/CNAME
+
+      - name: Deploy via FTP (clean slate)
+        if: env.CLEAN_SLATE == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOSTINGER_FTP_HOST }}
+          username: ${{ secrets.HOSTINGER_FTP_USER }}
+          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
+          local-dir: public/
+          server-dir: ${{ secrets.HOSTINGER_FTP_REMOTE_DIR }}/
+          log-level: verbose
+          dangerous-clean-slate: true
+          exclude: |
+            **/.git*
+            **/.github*
+            **/README.md
+            **/CNAME
+
+      - name: Post deploy summary
+        run: |
+          echo "Deploy finalizado com modo CLEAN_SLATE=${CLEAN_SLATE}";
+          echo "Tag: ${DEPLOY_TAG}";
