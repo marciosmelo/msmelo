@@ -1,4 +1,4 @@
-name: Deploy to Hostinger (FTP)
+name: Deploy to Hostinger (FTP/SFTP)
 
 on:
   push:
@@ -13,6 +13,8 @@ jobs:
       CLEAN_SLATE: 'false'
       # Tag opcional para rastrear deploy (aparece nos logs e você pode buscar em analytics)
       DEPLOY_TAG: 'hostinger-ftp'
+      # Protocolo de deploy: ftp ou sftp (padrão ftp). Ajuste para 'sftp' após configurar chaves.
+      DEPLOY_PROTOCOL: 'ftp'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,8 +33,28 @@ jobs:
           hugo --minify
           echo "[info] Tamanho resultante public/" && du -sh public || true
 
+      - name: Testar conectividade (FTP)
+        if: env.DEPLOY_PROTOCOL == 'ftp'
+        shell: bash
+        run: |
+          HOST="${{ secrets.HOSTINGER_FTP_HOST }}"
+          PORT="21"
+          echo "[check] Testando porta $PORT em $HOST (timeout 8s)"
+          if timeout 8 bash -c "</dev/tcp/$HOST/$PORT" 2>/dev/null; then
+            echo "[ok] Porta $PORT acessível"
+          else
+            echo "::warning:: Porta $PORT inacessível ou bloqueada. Possível necessidade de SFTP (porta 22). Marcando SKIP_DEPLOY=1"
+            echo "SKIP_DEPLOY=1" >> $GITHUB_ENV
+          fi
+
+      - name: Exibir protocolo escolhido
+        run: |
+          echo "Protocolo: ${DEPLOY_PROTOCOL}";
+          echo "Clean slate: ${CLEAN_SLATE}";
+          if [ "${SKIP_DEPLOY}" = "1" ]; then echo "[warn] Deploy será pulado por falha de conectividade."; fi
+
       - name: Deploy via FTP (safe mode)
-        if: env.CLEAN_SLATE == 'false'
+        if: env.DEPLOY_PROTOCOL == 'ftp' && env.CLEAN_SLATE == 'false' && env.SKIP_DEPLOY != '1'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.HOSTINGER_FTP_HOST }}
@@ -51,7 +73,7 @@ jobs:
             **/CNAME
 
       - name: Deploy via FTP (clean slate)
-        if: env.CLEAN_SLATE == 'true'
+        if: env.DEPLOY_PROTOCOL == 'ftp' && env.CLEAN_SLATE == 'true' && env.SKIP_DEPLOY != '1'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.HOSTINGER_FTP_HOST }}
@@ -69,7 +91,42 @@ jobs:
             **/README.md
             **/CNAME
 
+      # ---- SFTP (alternativo - desabilitado por enquanto) ----
+      # Para ativar no futuro: descomente o bloco abaixo e crie secrets:
+      #   HOSTINGER_SSH_HOST, HOSTINGER_SSH_USER, HOSTINGER_SSH_KEY, HOSTINGER_SSH_REMOTE_DIR
+      # - name: Limpar diretório remoto (SFTP clean slate)
+      #   if: env.DEPLOY_PROTOCOL == 'sftp' && env.CLEAN_SLATE == 'true'
+      #   uses: appleboy/ssh-action@v1.0.3
+      #   with:
+      #     host: ${{ secrets.HOSTINGER_SSH_HOST }}
+      #     username: ${{ secrets.HOSTINGER_SSH_USER }}
+      #     key: ${{ secrets.HOSTINGER_SSH_KEY }}
+      #     script: |
+      #       set -e
+      #       echo "[info] Removendo conteúdo de ${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
+      #       rm -rf "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"/*
+      # - name: Upload via SFTP (safe/normal)
+      #   if: env.DEPLOY_PROTOCOL == 'sftp' && env.CLEAN_SLATE == 'false'
+      #   uses: appleboy/scp-action@v0.1.7
+      #   with:
+      #     host: ${{ secrets.HOSTINGER_SSH_HOST }}
+      #     username: ${{ secrets.HOSTINGER_SSH_USER }}
+      #     key: ${{ secrets.HOSTINGER_SSH_KEY }}
+      #     source: "public/*"
+      #     target: "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
+      # - name: Upload via SFTP (após limpeza)
+      #   if: env.DEPLOY_PROTOCOL == 'sftp' && env.CLEAN_SLATE == 'true'
+      #   uses: appleboy/scp-action@v0.1.7
+      #   with:
+      #     host: ${{ secrets.HOSTINGER_SSH_HOST }}
+      #     username: ${{ secrets.HOSTINGER_SSH_USER }}
+      #     key: ${{ secrets.HOSTINGER_SSH_KEY }}
+      #     source: "public/*"
+      #     target: "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
+
       - name: Post deploy summary
         run: |
           echo "Deploy finalizado com modo CLEAN_SLATE=${CLEAN_SLATE}";
           echo "Tag: ${DEPLOY_TAG}";
+          echo "Protocolo: ${DEPLOY_PROTOCOL}";
+          if [ "${SKIP_DEPLOY}" = "1" ]; then echo "[warn] Deploy pulado por falha de conectividade FTP"; fi
