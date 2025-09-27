@@ -14,16 +14,22 @@ identifier = "aS5b0eLsPN"
 weight = 2
 
 [[main]]
+name = "Contos"
+url = "https://escritos.msmelo.blog/contos"
+identifier = "contos-sub"
+weight = 3
+
+[[main]]
 name = "Blogroll"
 pageRef = "/blogroll"
 identifier = "ihvVhq0Ho2"
-weight = 3
+weight = 4
 
 [[main]]
 name = "Sobre"
 pageRef = "/sobre"
 identifier = "oxhUFdW53b"
-weight = 4
+weight = 5
 
 [[main]]
 pre = "rss"
