@@ -10,7 +10,27 @@ cascade:
   invertPagination: true
 ---
 
-Minhas histórias publicadas em ebooks e livros por aí.
+Minhas histórias publicadas por aí.
+
+# Antologias
+
+## "Ridendo castigat mores" (Antologia – 2025)
+
+<img src="https://static.wixstatic.com/media/1c677e_cb7e90d27455413da8933215cf5c902c~mv2.png/v1/fill/w_500,h_750,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/1c677e_cb7e90d27455413da8933215cf5c902c~mv2.png" alt="Capa da antologia Ridendo castigat mores" width="300" />
+
+**Meu conto "Valentina e o robô sincero" integra esta coletânea premiada**, que reúne textos vencedores do 5º Concurso Literário da Revista PUB – Diálogos Interdisciplinares. A proposta do volume gira em torno do riso como crítica e afeto — humor que cutuca, mas também aproxima.
+
+Nesta antologia, levei uma versão condensada do universo de Valentina: tecnologia, tônus baiano e uma pitada de futuro cotidiano. O restante dos poemas e contos passeia por sátira, lirismo e pequenas ironias que fazem a leitura fluir.
+
+**Dados rápidos:**
+
+- SKU: 978-65-81026-90-5
+- Gêneros: Poesia & Conto
+- Curadoria: IBAP & parceiros
+
+➡️ [Comprar a antologia agora](https://www.terraredonda.com.br/product-page/ridendo-castigat-mores?srsltid=AfmBOorDbi-uw8rQYDWcJFIZqvJZmB9QP2__uQ5EpxcKtSVzWLB2i9h9)
+
+---
 
 # Ebooks de M. S. Melo
 
@@ -44,33 +64,5 @@ Miguel mora de favor na casa de sua tia, que nunca reconhece o quanto ele trabal
 **Comentários:**
 1. > "Divertidíssimo!! Naquele clima de natal calorento que só quem já foi em Salvador no verão conhece. Com leitura fluida, o livro é muito bem escrito, engraçado e com gírias dignas para usar o dicionário baianês!" - **Aline Prado** ⭐⭐⭐⭐⭐
 2. > "Dotado de uma ironia fina, M.S. Melo entregou um gracioso conto natalino cheio de metalinguagem, easter eggs (que ironia ter 'ovos de páscoa' em uma história sobre o Natal) e muita baianidade." - **Vladimir Baleeiro** ⭐⭐⭐⭐⭐
-
----
-
-## "Ridendo castigat mores (Antologia – 2025)"
-
-![Ridendo castigat mores](https://static.wixstatic.com/media/1c677e_cb7e90d27455413da8933215cf5c902c~mv2.png/v1/fill/w_500,h_750,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/1c677e_cb7e90d27455413da8933215cf5c902c~mv2.png)
-
-**Sobre a coletânea:**
-Uma seleção de poemas e contos premiados no 5º Concurso Literário da Revista PUB – Diálogos Interdisciplinares. O volume celebra o humor como ferramenta crítica e afetiva: rir como gesto de resistência, humanidade e esperança em tempos tensos.
-
-Entre as vozes reunidas, meu conto "Valentina e o robô sincero" compõe a ala de narrativa curta, levando para a antologia um recorte sutilmente futurista com sotaque soteropolitano.
-
-**Trecho da apresentação editorial (adaptado):**
-“Ridendo castigat mores.” O riso aqui aponta, provoca, desarma e aproxima. Nesta coletânea, a leveza e a ironia abrem espaço para leituras rápidas que deixam ecos demorados.
-
-**Dados do livro:**
-*SKU:* 978-65-81026-90-5  
-*Formato:* Impresso (disponível via editora/parceiros)  
-*Gêneros:* Poesia e Conto  
-*Curadoria:* Instituto Brasileiro de Advocacia Pública (IBAP) & parceiros  
-
-**Sumário (amostra parcial):**
-- Seção de Poesia: textos que orbitam entre humor ácido, lirismo e observações cotidianas.
-- Seção de Conto: narrativas breves e bem-humoradas — onde se encaixa "Valentina e o robô sincero".
-
-**Onde encontrar:** *(coloque o link quando a loja oficial estiver disponível ou para compra do PDF)*  
-Para leitura de amostra ou aquisição da versão digital em PDF: **[acessar amostra / comprar](#)**
-
-> Se quiser saber mais sobre bastidores ou influências desse conto, me chama — posso preparar uma nota de processo criativo por aqui.
+*Gêneros:* Poesia e Conto
 
