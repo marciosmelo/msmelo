@@ -20,3 +20,4 @@ Se você encontrar problemas, bugs ou tiver sugestões de melhorias, sinta-se à
 ## Licença
 
 Este projeto é licenciado sob a [MIT License](LICENSE).
+\ntrigger: hostinger-deploy 2025-09-27T15:50:55Z

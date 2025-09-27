@@ -22,6 +22,17 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Handshake inicial (SSH)
+        if: env.DEPLOY_PROTOCOL == 'sftp'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOSTINGER_SSH_HOST }}
+          username: ${{ secrets.HOSTINGER_SSH_USER }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: ${{ env.SFTP_PORT }}
+          script: |
+            echo "[ok] Handshake inicial bem sucedido"
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
