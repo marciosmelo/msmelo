@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      CLEAN_SLATE: 'true'   # depois do primeiro sucesso mude para 'false'
+      CLEAN_SLATE: 'false'   # já foi validado; manter 'false' para deploy incremental
       SFTP_PORT: '65002'
     steps:
       - name: Checkout
@@ -57,16 +57,17 @@ jobs:
             echo "[info] Limpando ${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
             rm -rf "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"/*
 
-      - name: Upload
+      - name: Upload (conteúdo da pasta public para raiz remota)
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.HOSTINGER_SSH_HOST }}
           username: ${{ secrets.HOSTINGER_SSH_USER }}
           key: ${{ secrets.HOSTINGER_SSH_KEY }}
           port: ${{ env.SFTP_PORT }}
-          source: "public/*"
+          # Envia a pasta public inteira mas remove o primeiro nível para não criar subdiretório 'public' remoto
+          source: "public/**"
           target: "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
-          strip_components: 0
+          strip_components: 1
 
       - name: Listar remoto (pós-upload)
         uses: appleboy/ssh-action@v1.0.3
@@ -79,10 +80,23 @@ jobs:
             set -e
             echo "[debug] Após upload:"; ls -1 "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" | head -n 60 || true
 
+      - name: Tree remoto (até 3 níveis)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOSTINGER_SSH_HOST }}
+          username: ${{ secrets.HOSTINGER_SSH_USER }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: ${{ env.SFTP_PORT }}
+          script: |
+            set -e
+            echo "[debug] Estrutura (maxdepth 3):"
+            find "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" -maxdepth 3 -type f \( -name index.html -o -name '*.xml' -o -name '*.txt' \) -printf '%P\n' | sort | head -n 120 || true
+            echo "[debug] Diretórios nível 1:"; find "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" -mindepth 1 -maxdepth 1 -type d -printf '%f/\n' | sort || true
+
       - name: Summary
         run: |
           marker=$(ls public/deploy-marker-*.txt 2>/dev/null | tail -n1 | xargs -r basename)
-          echo "Deploy concluído. CLEAN_SLATE=${CLEAN_SLATE}"
+          echo "Deploy concluído. CLEAN_SLATE=${CLEAN_SLATE} (use 'true' apenas se quiser limpar tudo no próximo)"
           if [ -n "$marker" ]; then echo "Marker URL: https://msmelo.blog/${marker}"; fi
-          echo "Altere CLEAN_SLATE para 'false' após confirmar este deploy."
+          echo "Se páginas derem 404 limpe cache do navegador / CDN (se houver)."
 
