@@ -9,5 +9,5 @@ Dê um saque em minhas publicações e livros 📖 [aqui]({{< ref "livros" >}}).
 
 Surfe na web e visite outros sítios como este 🏄🏿‍♀️ [aqui]({{< ref "blogroll" >}}). -->
 
-> 🚀 Novo: Acesse agora meus contos em **escritos.msmelo.blog** → [ir para a coleção de contos](https://escritos.msmelo.blog/contos){ target="_blank" rel="noopener" }
+> 🚀 Novo: Acesse agora meus contos e histórias maiores em **escritos.msmelo.blog** → [ir para a coleção de contos](https://escritos.msmelo.blog/contos)
 
