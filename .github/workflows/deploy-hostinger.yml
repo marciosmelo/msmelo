@@ -12,9 +12,10 @@ jobs:
       # Controle central: mude para 'true' quando quiser limpeza completa (remove arquivos que não estão no build atual)
       CLEAN_SLATE: 'true'
       # Tag opcional para rastrear deploy (aparece nos logs e você pode buscar em analytics)
-      DEPLOY_TAG: 'hostinger-ftp'
-      # Protocolo de deploy: ftp ou sftp (padrão ftp). Ajuste para 'sftp' após configurar chaves.
-      DEPLOY_PROTOCOL: 'ftp'
+      DEPLOY_TAG: 'hostinger-sftp'
+      # Protocolo de deploy: ftp ou sftp
+      DEPLOY_PROTOCOL: 'sftp'
+      SFTP_PORT: '65002'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,19 +32,22 @@ jobs:
         run: |
           echo "[info] Iniciando build Hugo"
           hugo --minify
+          ts=$(date -u +%Y%m%d-%H%M%S)
+          echo "marker ${ts}" > public/deploy-marker-${ts}.txt
+          echo "[info] Marker gerado: deploy-marker-${ts}.txt"
           echo "[info] Tamanho resultante public/" && du -sh public || true
 
-      - name: Testar conectividade (FTP)
-        if: env.DEPLOY_PROTOCOL == 'ftp'
+      - name: Testar conectividade (SFTP)
+        if: env.DEPLOY_PROTOCOL == 'sftp'
         shell: bash
         run: |
-          HOST="${{ secrets.HOSTINGER_FTP_HOST }}"
-          PORT="21"
+          HOST="${{ secrets.HOSTINGER_SSH_HOST }}"
+          PORT="${{ env.SFTP_PORT }}"
           echo "[check] Testando porta $PORT em $HOST (timeout 8s)"
           if timeout 8 bash -c "</dev/tcp/$HOST/$PORT" 2>/dev/null; then
             echo "[ok] Porta $PORT acessível"
           else
-            echo "::warning:: Porta $PORT inacessível ou bloqueada. Possível necessidade de SFTP (porta 22). Marcando SKIP_DEPLOY=1"
+            echo "::warning:: Porta $PORT inacessível. Marcando SKIP_DEPLOY=1"
             echo "SKIP_DEPLOY=1" >> $GITHUB_ENV
           fi
 
@@ -53,43 +57,42 @@ jobs:
           echo "Clean slate: ${CLEAN_SLATE}";
           if [ "${SKIP_DEPLOY}" = "1" ]; then echo "[warn] Deploy será pulado por falha de conectividade."; fi
 
-      - name: Deploy via FTP (safe mode)
-        if: env.DEPLOY_PROTOCOL == 'ftp' && env.CLEAN_SLATE == 'false' && env.SKIP_DEPLOY != '1'
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.HOSTINGER_FTP_HOST }}
-          username: ${{ secrets.HOSTINGER_FTP_USER }}
-          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          protocol: ftp
-          port: 21
-          local-dir: public/
-          server-dir: ${{ secrets.HOSTINGER_FTP_REMOTE_DIR }}/
-          log-level: verbose
-          dangerous-clean-slate: false
-          exclude: |
-            **/.git*
-            **/.github*
-            **/README.md
-            **/CNAME
+      # (Desativado bloco FTP anterior)
 
-      - name: Deploy via FTP (clean slate)
-        if: env.DEPLOY_PROTOCOL == 'ftp' && env.CLEAN_SLATE == 'true' && env.SKIP_DEPLOY != '1'
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Limpar diretório remoto (SFTP clean slate)
+        if: env.DEPLOY_PROTOCOL == 'sftp' && env.CLEAN_SLATE == 'true' && env.SKIP_DEPLOY != '1'
+        uses: appleboy/ssh-action@v1.0.3
         with:
-          server: ${{ secrets.HOSTINGER_FTP_HOST }}
-          username: ${{ secrets.HOSTINGER_FTP_USER }}
-          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          protocol: ftp
-          port: 21
-          local-dir: public/
-          server-dir: ${{ secrets.HOSTINGER_FTP_REMOTE_DIR }}/
-          log-level: verbose
-          dangerous-clean-slate: true
-          exclude: |
-            **/.git*
-            **/.github*
-            **/README.md
-            **/CNAME
+          host: ${{ secrets.HOSTINGER_SSH_HOST }}
+          username: ${{ secrets.HOSTINGER_SSH_USER }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: ${{ env.SFTP_PORT }}
+          script: |
+            set -e
+            echo "[info] Removendo conteúdo de ${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
+            rm -rf "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"/*
+
+      - name: Upload via SFTP (após limpeza)
+        if: env.DEPLOY_PROTOCOL == 'sftp' && env.CLEAN_SLATE == 'true' && env.SKIP_DEPLOY != '1'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOSTINGER_SSH_HOST }}
+          username: ${{ secrets.HOSTINGER_SSH_USER }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: ${{ env.SFTP_PORT }}
+          source: "public/*"
+          target: "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
+
+      - name: Upload via SFTP (modo incremental)
+        if: env.DEPLOY_PROTOCOL == 'sftp' && env.CLEAN_SLATE == 'false' && env.SKIP_DEPLOY != '1'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOSTINGER_SSH_HOST }}
+          username: ${{ secrets.HOSTINGER_SSH_USER }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: ${{ env.SFTP_PORT }}
+          source: "public/*"
+          target: "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
 
       # ---- SFTP (alternativo - desabilitado por enquanto) ----
       # Para ativar no futuro: descomente o bloco abaixo e crie secrets:
