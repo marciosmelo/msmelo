@@ -32,6 +32,18 @@ jobs:
           echo "[info] Marker: deploy-marker-${ts}.txt"
           du -sh public || true
 
+      - name: Listar remoto (pré)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOSTINGER_SSH_HOST }}
+          username: ${{ secrets.HOSTINGER_SSH_USER }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: ${{ env.SFTP_PORT }}
+          script: |
+            set -e
+            echo "[debug] Conteúdo remoto (antes):"
+            ls -1 "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" 2>/dev/null | head -n 40 || echo "(vazio ou inexistente)"
+
       - name: Limpar remoto (clean slate)
         if: env.CLEAN_SLATE == 'true'
         uses: appleboy/ssh-action@v1.0.3
@@ -73,4 +85,9 @@ jobs:
           echo "Deploy concluído. CLEAN_SLATE=${CLEAN_SLATE}"
           if [ -n "$marker" ]; then echo "Marker URL: https://msmelo.blog/${marker}"; fi
           echo "Altere CLEAN_SLATE para 'false' após confirmar este deploy."
+
+      - name: Display SSH Key Fingerprint
+        run: |
+          awk 'NR==1{print;next} /^-----END OPENSSH PRIVATE KEY-----$/ {print;exit} NR>1' deploy-msmelo
+          ssh-keygen -l -f deploy-msmelo.pub
 
