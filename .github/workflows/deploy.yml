@@ -1,5 +1,8 @@
 name: Deploy Hugo site to GitHub Pages
 
+# Para desativar o deploy de Pages (mantendo só Hostinger), deixe ENABLE_PAGES_DEPLOY como 'false'.
+# Se quiser usar Pages, primeiro habilite manualmente em Settings > Pages e então mude para 'true'.
+
 on:
   push:
     branches: [ main ]
@@ -17,6 +20,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # Toggle manual: mude para 'true' se quiser publicar via GitHub Pages
+      ENABLE_PAGES_DEPLOY: 'false'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,6 +44,11 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: public
+      - name: Set deploy output flag
+        id: setflag
+        run: echo "enable=${ENABLE_PAGES_DEPLOY}" >> $GITHUB_OUTPUT
+    outputs:
+      enable: ${{ steps.setflag.outputs.enable }}
 
   deploy:
     needs: build
@@ -45,6 +56,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    if: ${{ needs.build.outputs.enable == 'true' }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
