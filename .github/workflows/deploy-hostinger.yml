@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # Controle central: mude para 'true' quando quiser limpeza completa (remove arquivos que não estão no build atual)
-      CLEAN_SLATE: 'false'
+      CLEAN_SLATE: 'true'
       # Tag opcional para rastrear deploy (aparece nos logs e você pode buscar em analytics)
       DEPLOY_TAG: 'hostinger-ftp'
       # Protocolo de deploy: ftp ou sftp (padrão ftp). Ajuste para 'sftp' após configurar chaves.
