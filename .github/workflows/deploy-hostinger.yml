@@ -32,18 +32,6 @@ jobs:
           echo "[info] Marker: deploy-marker-${ts}.txt"
           du -sh public || true
 
-      - name: Listar remoto (pré)
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.HOSTINGER_SSH_HOST }}
-          username: ${{ secrets.HOSTINGER_SSH_USER }}
-          key: ${{ secrets.HOSTINGER_SSH_KEY }}
-          port: ${{ env.SFTP_PORT }}
-          script: |
-            set -e
-            echo "[debug] Conteúdo remoto (antes):"
-            ls -1 "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" 2>/dev/null | head -n 40 || echo "(vazio ou inexistente)"
-
       - name: Limpar remoto (clean slate)
         if: env.CLEAN_SLATE == 'true'
         uses: appleboy/ssh-action@v1.0.3
@@ -68,30 +56,6 @@ jobs:
           source: "public/**"
           target: "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
           strip_components: 1
-
-      - name: Listar remoto (pós-upload)
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.HOSTINGER_SSH_HOST }}
-          username: ${{ secrets.HOSTINGER_SSH_USER }}
-          key: ${{ secrets.HOSTINGER_SSH_KEY }}
-          port: ${{ env.SFTP_PORT }}
-          script: |
-            set -e
-            echo "[debug] Após upload:"; ls -1 "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" | head -n 60 || true
-
-      - name: Tree remoto (até 3 níveis)
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.HOSTINGER_SSH_HOST }}
-          username: ${{ secrets.HOSTINGER_SSH_USER }}
-          key: ${{ secrets.HOSTINGER_SSH_KEY }}
-          port: ${{ env.SFTP_PORT }}
-          script: |
-            set -e
-            echo "[debug] Estrutura (maxdepth 3):"
-            find "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" -maxdepth 3 -type f \( -name index.html -o -name '*.xml' -o -name '*.txt' \) -printf '%P\n' | sort | head -n 120 || true
-            echo "[debug] Diretórios nível 1:"; find "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" -mindepth 1 -maxdepth 1 -type d -printf '%f/\n' | sort || true
 
       - name: Summary
         run: |
