@@ -56,6 +56,20 @@ jobs:
           echo "Protocolo: ${DEPLOY_PROTOCOL}";
           echo "Clean slate: ${CLEAN_SLATE}";
           if [ "${SKIP_DEPLOY}" = "1" ]; then echo "[warn] Deploy será pulado por falha de conectividade."; fi
+          echo "Remote dir (secret truncado): $(echo "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" | sed 's/[^/]/*/g')"
+
+      - name: Listar remoto (pré-upload)
+        if: env.DEPLOY_PROTOCOL == 'sftp' && env.SKIP_DEPLOY != '1'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOSTINGER_SSH_HOST }}
+          username: ${{ secrets.HOSTINGER_SSH_USER }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: ${{ env.SFTP_PORT }}
+          script: |
+            set -e
+            echo "[debug] ls -1 ${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" || true
+            ls -1 "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" 2>&1 | head -n 40 || true
 
       # (Desativado bloco FTP anterior)
 
@@ -82,6 +96,7 @@ jobs:
           port: ${{ env.SFTP_PORT }}
           source: "public/*"
           target: "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
+          strip_components: 0
 
       - name: Upload via SFTP (modo incremental)
         if: env.DEPLOY_PROTOCOL == 'sftp' && env.CLEAN_SLATE == 'false' && env.SKIP_DEPLOY != '1'
@@ -93,6 +108,20 @@ jobs:
           port: ${{ env.SFTP_PORT }}
           source: "public/*"
           target: "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
+          strip_components: 0
+
+      - name: Listar remoto (pós-upload)
+        if: env.DEPLOY_PROTOCOL == 'sftp' && env.SKIP_DEPLOY != '1'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOSTINGER_SSH_HOST }}
+          username: ${{ secrets.HOSTINGER_SSH_USER }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: ${{ env.SFTP_PORT }}
+          script: |
+            set -e
+            echo "[debug] Conteúdo após upload:";
+            ls -1 "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" 2>&1 | head -n 80 || true
 
       # ---- SFTP (alternativo - desabilitado por enquanto) ----
       # Para ativar no futuro: descomente o bloco abaixo e crie secrets:
