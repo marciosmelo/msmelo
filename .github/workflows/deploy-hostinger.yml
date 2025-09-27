@@ -1,4 +1,4 @@
-name: Deploy to Hostinger (FTP/SFTP)
+name: Deploy to Hostinger (SFTP)
 
 on:
   push:
@@ -6,32 +6,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     env:
-      # Controle central: mude para 'true' quando quiser limpeza completa (remove arquivos que não estão no build atual)
-      CLEAN_SLATE: 'true'
-      # Tag opcional para rastrear deploy (aparece nos logs e você pode buscar em analytics)
-      DEPLOY_TAG: 'hostinger-sftp'
-      # Protocolo de deploy: ftp ou sftp
-      DEPLOY_PROTOCOL: 'sftp'
+      CLEAN_SLATE: 'true'   # depois do primeiro sucesso mude para 'false'
       SFTP_PORT: '65002'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
-
-      - name: Handshake inicial (SSH)
-        if: env.DEPLOY_PROTOCOL == 'sftp'
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.HOSTINGER_SSH_HOST }}
-          username: ${{ secrets.HOSTINGER_SSH_USER }}
-          key: ${{ secrets.HOSTINGER_SSH_KEY }}
-          port: ${{ env.SFTP_PORT }}
-          script: |
-            echo "[ok] Handshake inicial bem sucedido"
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -41,36 +25,15 @@ jobs:
 
       - name: Build
         run: |
-          echo "[info] Iniciando build Hugo"
+          echo "[info] Build do Hugo"
           hugo --minify
           ts=$(date -u +%Y%m%d-%H%M%S)
           echo "marker ${ts}" > public/deploy-marker-${ts}.txt
-          echo "[info] Marker gerado: deploy-marker-${ts}.txt"
-          echo "[info] Tamanho resultante public/" && du -sh public || true
+          echo "[info] Marker: deploy-marker-${ts}.txt"
+          du -sh public || true
 
-      - name: Testar conectividade (SFTP)
-        if: env.DEPLOY_PROTOCOL == 'sftp'
-        shell: bash
-        run: |
-          HOST="${{ secrets.HOSTINGER_SSH_HOST }}"
-          PORT="${{ env.SFTP_PORT }}"
-          echo "[check] Testando porta $PORT em $HOST (timeout 8s)"
-          if timeout 8 bash -c "</dev/tcp/$HOST/$PORT" 2>/dev/null; then
-            echo "[ok] Porta $PORT acessível"
-          else
-            echo "::warning:: Porta $PORT inacessível. Marcando SKIP_DEPLOY=1"
-            echo "SKIP_DEPLOY=1" >> $GITHUB_ENV
-          fi
-
-      - name: Exibir protocolo escolhido
-        run: |
-          echo "Protocolo: ${DEPLOY_PROTOCOL}";
-          echo "Clean slate: ${CLEAN_SLATE}";
-          if [ "${SKIP_DEPLOY}" = "1" ]; then echo "[warn] Deploy será pulado por falha de conectividade."; fi
-          echo "Remote dir (secret truncado): $(echo "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" | sed 's/[^/]/*/g')"
-
-      - name: Listar remoto (pré-upload)
-        if: env.DEPLOY_PROTOCOL == 'sftp' && env.SKIP_DEPLOY != '1'
+      - name: Limpar remoto (clean slate)
+        if: env.CLEAN_SLATE == 'true'
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOSTINGER_SSH_HOST }}
@@ -79,38 +42,10 @@ jobs:
           port: ${{ env.SFTP_PORT }}
           script: |
             set -e
-            echo "[debug] ls -1 ${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" || true
-            ls -1 "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" 2>&1 | head -n 40 || true
-
-      # (Desativado bloco FTP anterior)
-
-      - name: Limpar diretório remoto (SFTP clean slate)
-        if: env.DEPLOY_PROTOCOL == 'sftp' && env.CLEAN_SLATE == 'true' && env.SKIP_DEPLOY != '1'
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.HOSTINGER_SSH_HOST }}
-          username: ${{ secrets.HOSTINGER_SSH_USER }}
-          key: ${{ secrets.HOSTINGER_SSH_KEY }}
-          port: ${{ env.SFTP_PORT }}
-          script: |
-            set -e
-            echo "[info] Removendo conteúdo de ${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
+            echo "[info] Limpando ${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
             rm -rf "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"/*
 
-      - name: Upload via SFTP (após limpeza)
-        if: env.DEPLOY_PROTOCOL == 'sftp' && env.CLEAN_SLATE == 'true' && env.SKIP_DEPLOY != '1'
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.HOSTINGER_SSH_HOST }}
-          username: ${{ secrets.HOSTINGER_SSH_USER }}
-          key: ${{ secrets.HOSTINGER_SSH_KEY }}
-          port: ${{ env.SFTP_PORT }}
-          source: "public/*"
-          target: "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
-          strip_components: 0
-
-      - name: Upload via SFTP (modo incremental)
-        if: env.DEPLOY_PROTOCOL == 'sftp' && env.CLEAN_SLATE == 'false' && env.SKIP_DEPLOY != '1'
+      - name: Upload
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.HOSTINGER_SSH_HOST }}
@@ -122,7 +57,6 @@ jobs:
           strip_components: 0
 
       - name: Listar remoto (pós-upload)
-        if: env.DEPLOY_PROTOCOL == 'sftp' && env.SKIP_DEPLOY != '1'
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOSTINGER_SSH_HOST }}
@@ -131,45 +65,12 @@ jobs:
           port: ${{ env.SFTP_PORT }}
           script: |
             set -e
-            echo "[debug] Conteúdo após upload:";
-            ls -1 "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" 2>&1 | head -n 80 || true
+            echo "[debug] Após upload:"; ls -1 "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}" | head -n 60 || true
 
-      # ---- SFTP (alternativo - desabilitado por enquanto) ----
-      # Para ativar no futuro: descomente o bloco abaixo e crie secrets:
-      #   HOSTINGER_SSH_HOST, HOSTINGER_SSH_USER, HOSTINGER_SSH_KEY, HOSTINGER_SSH_REMOTE_DIR
-      # - name: Limpar diretório remoto (SFTP clean slate)
-      #   if: env.DEPLOY_PROTOCOL == 'sftp' && env.CLEAN_SLATE == 'true'
-      #   uses: appleboy/ssh-action@v1.0.3
-      #   with:
-      #     host: ${{ secrets.HOSTINGER_SSH_HOST }}
-      #     username: ${{ secrets.HOSTINGER_SSH_USER }}
-      #     key: ${{ secrets.HOSTINGER_SSH_KEY }}
-      #     script: |
-      #       set -e
-      #       echo "[info] Removendo conteúdo de ${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
-      #       rm -rf "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"/*
-      # - name: Upload via SFTP (safe/normal)
-      #   if: env.DEPLOY_PROTOCOL == 'sftp' && env.CLEAN_SLATE == 'false'
-      #   uses: appleboy/scp-action@v0.1.7
-      #   with:
-      #     host: ${{ secrets.HOSTINGER_SSH_HOST }}
-      #     username: ${{ secrets.HOSTINGER_SSH_USER }}
-      #     key: ${{ secrets.HOSTINGER_SSH_KEY }}
-      #     source: "public/*"
-      #     target: "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
-      # - name: Upload via SFTP (após limpeza)
-      #   if: env.DEPLOY_PROTOCOL == 'sftp' && env.CLEAN_SLATE == 'true'
-      #   uses: appleboy/scp-action@v0.1.7
-      #   with:
-      #     host: ${{ secrets.HOSTINGER_SSH_HOST }}
-      #     username: ${{ secrets.HOSTINGER_SSH_USER }}
-      #     key: ${{ secrets.HOSTINGER_SSH_KEY }}
-      #     source: "public/*"
-      #     target: "${{ secrets.HOSTINGER_SSH_REMOTE_DIR }}"
-
-      - name: Post deploy summary
+      - name: Summary
         run: |
-          echo "Deploy finalizado com modo CLEAN_SLATE=${CLEAN_SLATE}";
-          echo "Tag: ${DEPLOY_TAG}";
-          echo "Protocolo: ${DEPLOY_PROTOCOL}";
-          if [ "${SKIP_DEPLOY}" = "1" ]; then echo "[warn] Deploy pulado por falha de conectividade FTP"; fi
+          marker=$(ls public/deploy-marker-*.txt 2>/dev/null | tail -n1 | xargs -r basename)
+          echo "Deploy concluído. CLEAN_SLATE=${CLEAN_SLATE}"
+          if [ -n "$marker" ]; then echo "Marker URL: https://msmelo.blog/${marker}"; fi
+          echo "Altere CLEAN_SLATE para 'false' após confirmar este deploy."
+
