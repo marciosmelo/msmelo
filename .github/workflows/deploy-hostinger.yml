@@ -86,8 +86,3 @@ jobs:
           if [ -n "$marker" ]; then echo "Marker URL: https://msmelo.blog/${marker}"; fi
           echo "Altere CLEAN_SLATE para 'false' após confirmar este deploy."
 
-      - name: Display SSH Key Fingerprint
-        run: |
-          awk 'NR==1{print;next} /^-----END OPENSSH PRIVATE KEY-----$/ {print;exit} NR>1' deploy-msmelo
-          ssh-keygen -l -f deploy-msmelo.pub
-
