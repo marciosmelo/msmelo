@@ -1,8 +1,10 @@
+
 ---
 title: "Depósito de Luzes Excedentes"
 date: 2025-10-12T15:00:00-03:00
 draft: false
 description: "Um depósito sombrio, cristais luminosos e memórias sugadas."
+summary: "Alguns lugares guardam mais do que parecem."
 tags: ["literoutubro", "conto", "memória"]
 categories: ["posts"]
 series: ["LiterOutubro"]
@@ -14,7 +16,6 @@ showReadingTime: true
 showToc: false
 showBreadCrumbs: true
 ---
-
 
 Meu relógio marcava 3:47, eu só não sabia há quanto tempo os ponteiros estavam parados.
 *Filetes de luz atravessam minúsculos pontos que descem do teto criando cones de poeira brilhantes que dançam no ar.*
