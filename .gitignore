@@ -3,13 +3,20 @@ public/
 
 # Ignora arquivos temporários e de build do Hugo
 resources/
+resources/_gen/
 hugo_stats.json
+.hugo_build.lock
 
 # Ignora arquivos de sistema comuns
 .DS_Store
 Thumbs.db
+*.log
 
 # Ignora arquivos de backup do editor
 *~
 *.swp
 *.swo
+
+# Ignora arquivos temporários do sistema
+*.tmp
+.cache/
