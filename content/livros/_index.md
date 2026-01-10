@@ -12,6 +12,25 @@ cascade:
 
 Minhas histórias publicadas por aí.
 
+# Livros Publicados
+
+## "Sombras, Fantasmas e Dois Charutos Fumegantes" (2025)
+
+<img src="/images/sombras-fantasmas-dois-charutos-fumegantes.jpg" alt="Capa do livro Sombras, Fantasmas e Dois Charutos Fumegantes" width="300" />
+
+**Editora:** Urutau  
+**Gênero:** Romance
+
+**Sinopse:**  
+Após a morte de seu último guardião e o roubo de uma misteriosa caderneta, as irmãs Lara e Camila precisam sobreviver sozinhas em um mundo pós-apocalíptico. Perseguidas por uma seita e por entidades de outro mundo nas cidades arruinadas de São Félix e Cachoeira, Lara se vê forçada a confrontar os segredos que os uniam. Entre a lealdade à irmã e a busca pela verdade, ela descobrirá que alguns fantasmas são mais perigosos que outros.
+
+**Disponibilidade:**  
+📚 Livro físico e ebook em breve
+
+*O livro teve uma campanha de pré-venda na [Benfeitoria](https://benfeitoria.com/projeto/sombras), finalizada em agosto de 2025.*
+
+---
+
 # Antologias
 
 ## "Ridendo castigat mores" (Antologia – 2025)

@@ -8,7 +8,6 @@ series: ["Literoutubro"]
 tags: ["conto", "literoutubro"]
 series_order: 2
 featured_image: "post2.png"  # Alterar para o caminho correto da imagem
-date: 2024-10-24
 ---
 
 **O celular me acorda** com a música daquela série que amava e agora me desconsola numa **agonia preguiçosa**. As notificações me aguardam. Passo algumas para o lado, mas não a do aplicativo de fotos.

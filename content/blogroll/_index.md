@@ -21,5 +21,6 @@ Mais blogs para você visitar, conhecer e adicionar ao seu leitor RSS
 - [Meu diário de Leitura (Duran)](https://123duran.github.io/diarioDeLeitura/)
 - [POCILGA](https://pocilga.com.br)
 - [Pudim de Passas](https://pudimdepassas.com.br/)
+- [Lisandro Gaertner](https://lisandrogaertner.net/blog/)
 - [Trilux (Augusto Campos)](https://trilux.org/)
 - [Turminha do Ramon](https://turminhadoramon.blogspot.com/)
