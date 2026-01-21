@@ -25,7 +25,7 @@ Minhas histórias publicadas por aí.
 Após a morte de seu último guardião e o roubo de uma misteriosa caderneta, as irmãs Lara e Camila precisam sobreviver sozinhas em um mundo pós-apocalíptico. Perseguidas por uma seita e por entidades de outro mundo nas cidades arruinadas de São Félix e Cachoeira, Lara se vê forçada a confrontar os segredos que os uniam. Entre a lealdade à irmã e a busca pela verdade, ela descobrirá que alguns fantasmas são mais perigosos que outros.
 
 **Disponibilidade:**  
-📚 Livro físico e ebook em breve
+📚 [Comprar na Editora Urutau](https://editoraurutau.com/titulo/sombras-fantasmas-e-dois-charutos-fumegantes)
 
 *O livro teve uma campanha de pré-venda na [Benfeitoria](https://benfeitoria.com/projeto/sombras), finalizada em agosto de 2025.*
 

@@ -15,7 +15,7 @@ Ela entrou na loja certa que o universo a acompanhava na *cocó*, embora não so
 — Posso ajudar?  
 — Melhor, não — Karin respondeu, tentando não ser grossa.
 
-Ela só queria mel de *vespas mandarinas*, uma tarefa simples para qualquer pessoa, menos para ela. Assim que esticou o braço, antes mesmo de tocar no produto, tudo veio abaixo.
+Ela só queria mel de *abelhas mandarinas*, uma tarefa simples para qualquer pessoa, menos para ela. Assim que esticou o braço, antes mesmo de tocar no produto, tudo veio abaixo.
 
 O novato se desdobrava para segurar os produtos como quem tenta **empilhar cartas num vendaval**. Não importava o lado que ele fosse, tudo se espatifava no chão.
 
