@@ -39,7 +39,7 @@ weight = 6
 
 [[main]]
 pre = "rss"
-pageRef = "/index.xml"
+url = "https://msmelo.blog/index.xml"
 identifier = "8gTiR4lXGf"
 weight = 9999
 
@@ -59,3 +59,13 @@ weight = 9999
    name = "Tags"
    pageRef = "tags"
    weight = 10
+
+ [[footer]]
+   name = "Assine minha newsletter"
+   url = "https://marciosmelo.substack.com"
+   weight = 20
+
+ [[footer]]
+   name = "Assine o RSS"
+   url = "https://msmelo.blog/index.xml"
+   weight = 30
