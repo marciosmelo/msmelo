@@ -1,5 +1,5 @@
 ---
-title: "MSMelo.Blog! :tada:"
+title: "MSMelo.Blog"
 description: "Este sítio foi criado com o tema Blowfish para Hugo."
 ---
 
