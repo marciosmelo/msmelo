@@ -64,4 +64,9 @@ weight = 9999
    name = "Assine minha newsletter"
    url = "https://marciosmelo.substack.com"
    weight = 20
+
+ [[footer]]
+   name = "Subscribe to RSS"
+   url = "https://msmelo.blog/index.xml"
+   weight = 30
    
