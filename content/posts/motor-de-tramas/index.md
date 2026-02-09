@@ -6,20 +6,31 @@ description: "Uma ferramenta para gerar ideias para suas próximas histórias."
 tags: ["projetos", "escrita", "criatividade", "motor de tramas"]
 ---
 
-Já escrevi em algum lugar que nem deve existir mais que meu problema para escrever não é a falta de ideias. Tenho tantas, que elas vão se atropelando.
+Já escrevi em algum lugar ou comentei com alguém, mas não lembro mais: O meu maior problema para escrever nunca foi a falta de ideias. Na verdade, sofro com o oposto, o excesso. Elas se atropelam, brigam por espaço e, às vezes, acabam travando a *porra* toda.
 
-E foi numa dessas que tive a ideia de criar uma espécie de baralho com arquétipos e truques narrativos para destravar histórias, cenas ou personagens. O **Motor de Tramas** é um dos meus mil projetos inúteis que desenvolvi por algum motivo que eu ainda não sei, mas que até que ficou legal.
+Foi num desses engarrafamentos mentais que decidi criar o **Motor de Tramas**. Ele começou como mais um dos meus "mil projetos inúteis", mas acabou se tornando algo que, honestamente, ficou bem legal. **Mentira**, acho que foi apenas perda de tempo.
 
-## O que é o Motor de Tramas?
+## Do que se trata esse tal Motor?
 
-O Motor de Tramas é uma aplicação web simples que embaralha e apresenta um conjunto de cartas. Cada carta representa um elemento de uma história, um personagem, um lugar, um objeto ou uma situação. A ideia é combinar as cartas sorteadas para criar o núcleo de uma nova trama. Sejá lá o que isso signifique para você.
+O **Motor de Tramas** é uma aplicação web que funciona como um baralho de arquétipos e truques narrativos. Ele não escreve porra de nada por você (isso seria um tédio, e uma idea bem merda tipo colocar I.A. pra escrever suas coisas), ele causa **fricção**. 
 
-É um ponto de partida. Ou de lugar nenhum. As combinações podem ser surpreendentes, engraçadas ou até mesmo bizarras, mas o objetivo é despertar alguma coisa ai dentro da sua caixola.
+Cada carta sorteada representa um elemento: uma voz, uma cicatriz, um tecido de mundo ou uma ruptura. A ideia é que você combine esses fragmentos para encontrar o núcleo de uma nova trama — seja lá o que "núcleo" signifique para o seu processo.
 
-## Como funciona?
+> **É um ponto de partida. Ou um convite para o lugar nenhum.** As combinações podem ser absurdas, bizarras ou assustadoramente precisas. O único objetivo real é despertar algo aí dentro da sua caixola. Ou fazer você procrastinar mais um pouco enquanto sorteia todas as cartas.
 
-Basta acessar a página no meu sítio [https://msmelo.blog/tramas](/tramas) e deixar que o motor faça o trabalho. As cartas são carregadas e você pode embaralhá-las para obter novas combinações. Todas as imagens foram geradas por mim mesmo. **Nenhuma IA é capaz de desenhar como eu. E isso, agora, finalmente, é um motivo de orgulho**.
+---
 
-[**Clique aqui para experimentar o Motor de Tramas**](/tramas/)
+## Como usar (Sem manual de instruções)
 
-Qualquer dúvida, embaralhe novamente. Se ainda continuar com dúvida, fique com ela só para você, estou atolado já de coisas inúteis para fazer.S
+Não tem mistério. Basta acessar a página e deixar que o motor faça o trabalho sujo:
+
+👉 [**Experimentar o Motor de Tramas**](https://msmelo.blog/tramas)
+
+As cartas são carregadas e você pode embaralhá-las individualmente ou o set inteiro até sentir aquele "clique". Ou melhor, até enjoar e nunca mais voltar.
+
+### Um aviso sobre a arte
+Um ponto de orgulho pessoal: **todas as 104 lâminas foram desenhadas por mim, à mão, no nanquim.** Nenhuma IA é capaz de capturar essa sujeira e essa imperfeição do traço humano. E, sinceramente? Ver esse caos físico digitalizado é a melhor parte do projeto.
+
+---
+
+**Qualquer dúvida, embaralhe novamente.** Se a dúvida persistir, guarde-a com carinho só para você; eu já estou atolado de outras coisas inúteis (e divertidas) para fazer.
