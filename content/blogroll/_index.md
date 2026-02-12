@@ -16,6 +16,7 @@ Mais blogs para você visitar, conhecer e adicionar ao seu leitor RSS
 - [Blog do Cadu Silva](https://cadu.cc/blog.html)
 - [Daniely Silva](https://danielysilva.com.br/)
 - [Dennis Nunes](https://blog.nunesdennis.me/)
+- [Descabeladas] (https://descabeladas.ladybugbrazil.com/)
 - [escrevescreve (Cecilia Giannetti)](https://escrevescreve.wordpress.com/)
 - [Groselhas](https://groselhas.com.br/)
 - [Kiff (Portfólio)](https://kiff.com.br/)
