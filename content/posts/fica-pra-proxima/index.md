@@ -4,6 +4,7 @@ date: 2024-04-20T11:55:59-03:00
 author: M. S. Melo
 draft: false
 tags: ["cronicas", "poesia"]
+summary: "Tem dias que lembro daquela noite e me arrependo de tudo o que deveria ter feito e não fiz, tem dias — quando fico um pouco alto — que apenas dou risada."
 ---
 
 Morro de saudade dos seus olhos azuis. 

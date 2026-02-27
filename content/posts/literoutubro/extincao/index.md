@@ -3,6 +3,7 @@ title: "Extinção"
 date: 2025-10-03T15:30:00-03:00
 draft: false
 description: "E se eu disser que você está a um movimento de se aliar ao grupo mais exclusivo da galáxia? Comunicado independente dos Visionários da Preservação."
+summary: "E se eu disser que você está a um movimento de se aliar ao grupo mais exclusivo da galáxia?"
 tags: ["literoutubro", "scifi", "conto"]
 categories: ["posts"]
 series: ["LiterOutubro"]

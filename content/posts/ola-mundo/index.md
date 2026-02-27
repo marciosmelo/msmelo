@@ -3,6 +3,7 @@ title: "Olá Mundo!"
 date: 2024-01-15
 draft: false
 tags: ["posts"]
+summary: "Propositalmente ele vai ser assim mesmo, nessa vibe início dos anos 2000."
 ---
 Olá mundo, este é o meu novo 🏡 **sítio particular**. 
 

@@ -4,6 +4,7 @@ date: 2024-04-27T11:55:59-03:00
 author: M. S. Melo
 draft: false
 tags: ["contos", "scifi"]
+summary: "A jornada dentro do deserto da sua mente estava prestes a começar."
 ---
 
 Dava trabalho de engolir e sempre grudava na garganta, mas tinha gosto de ouro. **Todos os dias eram iguais**, as mesmas regras para seguir. O porquê de ter que tomar aquelas pílulas ninguém sabia.
