@@ -5,6 +5,7 @@ date: 2024-02-01T05:55:59-03:00
 author: M. S. Melo
 draft: false
 tags: ["cronicas"]
+summary: "Um texto finalizado nada mais é do que um ato fortuito de coragem (ou imprudência) cometido quando ninguém está olhando."
 ---
 
 **Quando ninguém está olhando** é mais fácil colocar as palavras lado a lado. Sem se preocupar com as frases que vão se formar e nem com seus significados. Sem pesquisar por sinônimos, sem sentar o dedo no backspace até a página ficar em branco novamente.

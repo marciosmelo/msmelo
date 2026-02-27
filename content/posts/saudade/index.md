@@ -4,6 +4,7 @@ date: 2024-05-30
 author: M. S. Melo
 draft: false
 tags: ["cronicas"]
+summary: "Em algum lugar do passado, é tudo igual, nada se move."
 ---
 
 Resolvi dar um mergulho no passado. **Foi horrível**. Lembrei de todas as coisas que dizia e pensava. Algumas embaraçosas, outras que deixaram aquela saudade triste que bate no fundo do peito. Rotinas que desapareceram sem avisar e se tornaram lembranças.

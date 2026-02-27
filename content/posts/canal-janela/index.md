@@ -4,6 +4,7 @@ date: 2024-06-14
 author: M. S. Melo
 draft: false
 tags: ["pandemia", "cronicas"]
+summary: "O que antes era diariamente ocupado por um número sem fim de carros e pessoas indo de um lado ao outro agora parece cena de um filme apocalíptico qualquer."
 ---
 
 **Qual será a punição para o crime de ficar bisbilhotando a vida alheia da sua janela?** 

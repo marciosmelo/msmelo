@@ -5,6 +5,7 @@ date: 2024-04-21T01:55:59-03:00
 author: M. S. Melo
 draft: false
 tags: ["cronicas", "poesia"]
+summary: "O seu sorriso era o mesmo, os seus olhos castanhos brilharam naquela tarde e eu, finalmente, sorri de volta."
 ---
 
 eu deixei de olhar para trás por sua causa.

@@ -3,6 +3,7 @@ title: "O Motor de Tramas"
 date: 2026-02-08T10:00:00-03:00
 author: ["Márcio Melo"]
 description: "Uma ferramenta para gerar ideias para suas próximas histórias."
+summary: "É um ponto de partida. Ou um convite para o lugar nenhum."
 tags: ["projetos", "escrita", "criatividade", "motor de tramas"]
 ---
 

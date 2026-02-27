@@ -4,6 +4,7 @@ date: 2024-03-30T11:55:59-03:00
 author: M. S. Melo
 draft: false
 tags: ["cronicas", "pandemia"]
+summary: "Pior é ficar preso no mesmo ciclo sem fim."
 ---
 
 Daqui de dentro eu vejo tudo o que vocês ouvem. Não tem nenhum filtro, é **open source**. Navego pelos códigos mal escritos das tuas costas até chegar no centro do problema. É o que você acha que vê, mas não enxergou. O que é e você não sabe ainda e também tudo o que você acha que entendeu.
