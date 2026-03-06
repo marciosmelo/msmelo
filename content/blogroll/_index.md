@@ -20,6 +20,7 @@ Mais blogs para você visitar, conhecer e adicionar ao seu leitor RSS
 - [Descabeladas](https://descabeladas.ladybugbrazil.com/)
 - [escrevescreve (Cecilia Giannetti)](https://escrevescreve.wordpress.com/)
 - [Groselhas](https://groselhas.com.br/)
+- [Jackson Jesus](https://jackson.jesus.nom.br/)
 - [Kiff (Portfólio)](https://kiff.com.br/)
 - [Lia Amancio](https://liaamancio.com.br/)
 - [Lisandro Gaertner](https://lisandrogaertner.net/blog/)
