@@ -33,6 +33,24 @@ Após a morte de seu último guardião e o roubo de uma misteriosa caderneta, as
 
 # Antologias
 
+## "Literoutubro 2024: Disutópicos" (Antologia – 2026)
+
+<img src="https://substackcdn.com/image/fetch/$s_!l7qO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71402ba4-5bb3-4f8d-8ad3-29e6b5aa0b72_721x803.jpeg" alt="Capa do livro Literoutubro 2024: Disutópicos" width="300" />
+
+**Meus textos do Literoutubro 2024 integram esta coletânea**, a primeira publicação física da newsletter [Toranja](https://toranja.substack.com). Organizada por Paula Maria e Lisandro Gaertner, o livro reúne produções literárias utópicas, distópicas — ou, no neologismo torângico, *disutópicas* — escritas durante o desafio Literoutubro do ano III.
+
+Experimental, independente e de tiragem limitada, o volume coroa anos de edição, design e diagramação com textos de Andrea Rezes Esmeraldino, Denise Gals, Grecia Augusta, Izabel Méo, Lívia Reis, Marcio Melo e Tatiana Guedes.
+
+**Dados rápidos:**
+
+- Organização: Paula Maria e Lisandro Gaertner (Toranja)
+- Gêneros: Conto & Poesia
+- Formato: Livro físico, edição independente
+
+➡️ [Peça o seu exemplar](https://forms.gle/My8corZwGCB9ZPLM7)
+
+---
+
 ## "Ridendo castigat mores" (Antologia – 2025)
 
 <img src="https://static.wixstatic.com/media/1c677e_cb7e90d27455413da8933215cf5c902c~mv2.png/v1/fill/w_500,h_750,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/1c677e_cb7e90d27455413da8933215cf5c902c~mv2.png" alt="Capa da antologia Ridendo castigat mores" width="300" />
