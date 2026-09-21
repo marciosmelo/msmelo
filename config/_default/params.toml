@@ -74,3 +74,7 @@ homeRecentCount = 5
 [[socialIcons]]
   name = "instagram"
   url = "https://instagram.com/marciosmelo"
+
+[[socialIcons]]
+  name = "flickr"
+  url = "https://www.flickr.com/photos/mmelo/"
