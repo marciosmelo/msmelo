@@ -1,6 +1,6 @@
-[submodule "themes/blowfish"]
-	path = themes/blowfish
-	url = https://github.com/nunocoracao/blowfish
 [submodule "static/tramas"]
 	path = static/tramas
 	url = git@github.com:marciosmelo/tramas.git
+[submodule "themes/PaperMod"]
+	path = themes/PaperMod
+	url = https://github.com/adityatelange/hugo-PaperMod.git

@@ -1,0 +1,29 @@
+{{- /* Home: foto + nome + headline + redes (sem bio longa) */ -}}
+{{- with site.Params.author }}
+<article class="first-entry home-info author-card">
+  <div class="author-card__inner">
+    {{- $imgPath := .image | default "eu-autor.jpg" }}
+    {{- $img := resources.Get $imgPath }}
+    {{- if not $img }}{{ $img = resources.Get (printf "img/%s" $imgPath) }}{{ end }}
+    {{- if $img }}
+      {{- $avatar := $img.Fill "240x240 Center" }}
+      <img class="author-card__avatar"
+           src="{{ $avatar.RelPermalink }}"
+           alt="{{ .name }}"
+           width="140"
+           height="140"
+           loading="eager" />
+    {{- end }}
+
+    <h1 class="author-card__name">{{ .name }}</h1>
+
+    {{- with .headline }}
+    <p class="author-card__headline">{{ . }}</p>
+    {{- end }}
+
+    <footer class="entry-footer">
+      {{ partial "social_icons.html" (dict "align" (site.Params.homeInfoParams.AlignSocialIconsTo | default "center")) }}
+    </footer>
+  </div>
+</article>
+{{- end -}}

@@ -1,0 +1,281 @@
+/* Leitura: tipografia + cores mais claras (override do PaperMod) */
+
+:root {
+  --font-ui: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-body: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --gap: 28px;
+  --main-width: 740px;
+  --theme: #f6f1e8;
+  --entry: #f6f1e8;
+  --primary: #1a1612;
+  --secondary: #5c534a;
+  --content: #241f1a;
+  --code-bg: #efe8dc;
+  --border: #d9d0c2;
+  --tertiary: #e5dccf;
+}
+
+:root[data-theme="dark"] {
+  --theme: #161412;
+  --entry: #1c1916;
+  --primary: #f3ebe1;
+  --secondary: #b9aea0;
+  --content: #ebe3d7;
+  --code-bg: #1c1916;
+  --border: #3a342c;
+  --tertiary: #2a251f;
+}
+
+.list,
+[data-theme="dark"] .list {
+  background: var(--theme);
+}
+
+body {
+  font-family: var(--font-ui);
+  font-size: 18px;
+  line-height: 1.6;
+  background: var(--theme);
+  color: var(--primary);
+}
+
+.post-content,
+.md-content,
+.entry-content,
+.post-description {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--content);
+}
+
+.post-content p,
+.post-content li {
+  color: var(--content);
+}
+
+.entry-header h1,
+.entry-header h2,
+.page-header h1,
+.author-card__name,
+.year-heading {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+}
+
+.entry-content {
+  opacity: 1 !important;
+  color: var(--content);
+}
+
+.entry-footer,
+.post-meta {
+  color: var(--secondary);
+  opacity: 1 !important;
+  font-size: 0.92rem;
+}
+
+/* Lupa no menu (esconde texto residual do título da página) */
+#menu a[title="Pesquisar no site"] {
+  font-size: 0;
+  line-height: 0;
+}
+
+#menu a[title="Pesquisar no site"] span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+
+#menu a[title="Pesquisar no site"] svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+/* Autor */
+
+.author-card {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  margin-bottom: calc(var(--gap) * 1.25);
+  padding: calc(var(--gap) * 0.5) 0 calc(var(--gap) * 1.25);
+  box-shadow: none;
+  text-align: center;
+}
+
+.author-card__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  max-width: min(100%, 48rem);
+  margin-inline: auto;
+  padding-inline: 0.5rem;
+}
+
+.author-card__avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 0 0.2rem;
+  filter: grayscale(1) contrast(1.05);
+  transition: filter 0.35s ease, transform 0.35s ease;
+}
+
+.author-card__avatar:hover,
+.author-card__inner:hover .author-card__avatar {
+  filter: grayscale(0) contrast(1);
+  transform: scale(1.03);
+}
+
+.author-card__name {
+  font-size: 1.85rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.author-card__headline {
+  margin: 0;
+  font-size: 1.12rem;
+  line-height: 1.4;
+  color: var(--secondary);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .author-card__headline {
+    font-size: clamp(0.72rem, 2.8vw, 1.05rem);
+  }
+}
+
+.author-card .social-icons {
+  margin-top: 0.25rem;
+}
+
+/* Lista */
+
+.post-entry {
+  background: transparent !important;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  margin-bottom: 0;
+  padding: calc(var(--gap) * 0.9) 0;
+  box-shadow: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.post-entry:hover {
+  background: transparent !important;
+}
+
+.post-entry .entry-cover {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.post-entry .entry-cover img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.post-entry:hover .entry-cover img {
+  transform: scale(1.02);
+}
+
+.post-entry .entry-header h2 {
+  font-size: 1.35rem;
+  margin: 0;
+}
+
+.post-entry .entry-content {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .post-entry:has(.entry-cover) {
+    grid-template-columns: 180px 1fr;
+    column-gap: 1.25rem;
+    align-items: start;
+  }
+
+  .post-entry:has(.entry-cover) .entry-cover {
+    grid-row: 1 / span 3;
+  }
+
+  .post-entry:has(.entry-cover) .entry-cover img {
+    max-height: none;
+    height: 120px;
+  }
+}
+
+.year-heading {
+  font-size: 1.15rem;
+  margin: 2rem 0 0.35rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--border);
+  color: var(--secondary);
+  text-transform: none;
+  letter-spacing: 0.04em;
+}
+
+.home-more {
+  margin: 1.75rem 0 0.5rem;
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 1.05rem;
+}
+
+.home-more a {
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+/* Paginação legível (só em /posts se voltar a paginar) */
+.page-footer .pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  font-family: var(--font-ui);
+}
+
+.page-footer .pagination a {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  color: var(--primary);
+  background: transparent;
+}
+
+#menu a[href*="escritos.msmelo.blog"] {
+  font-weight: 700;
+}
+
+/* Blogroll: hover nos links */
+.post-content ul li a {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.2em;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease, padding-inline-start 0.2s ease;
+}
+
+.post-content ul li a:hover {
+  color: var(--primary);
+  text-decoration-color: var(--primary);
+  padding-inline-start: 0.35rem;
+}
+
