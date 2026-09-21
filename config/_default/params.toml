@@ -78,3 +78,14 @@ homeRecentCount = 5
 [[socialIcons]]
   name = "flickr"
   url = "https://www.flickr.com/photos/mmelo/"
+  title = "Flickr"
+
+[[socialIcons]]
+  name = "lastfm"
+  url = "https://www.last.fm/pt/user/marciosmelo"
+  title = "Last.fm"
+
+[[socialIcons]]
+  name = "pocilga"
+  url = "https://pocilga.com.br"
+  title = "POCILGA"
