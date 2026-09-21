@@ -265,6 +265,28 @@ body {
   font-weight: 700;
 }
 
+/* Capas no post aberto: mesmo tamanho (tema deixa solto por padrão) */
+.post-single .entry-cover {
+  overflow: hidden;
+  border-radius: var(--radius);
+  width: 100%;
+}
+
+.post-single .entry-cover img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius);
+}
+
+@media (min-width: 768px) {
+  .post-single .entry-cover img {
+    height: 360px;
+  }
+}
+
 /* Blogroll: hover nos links */
 .post-content ul li a {
   text-decoration: underline;
