@@ -1,0 +1,40 @@
+{{- $page := .page -}}
+{{- $class := .class | default "cover" -}}
+{{- $link := .link -}}
+{{- $img := false -}}
+{{- $permalink := "" -}}
+{{- $alt := $page.Title -}}
+
+{{- with $page.Resources.GetMatch "{feature*,*featured*}" -}}
+  {{- $img = . -}}
+  {{- $permalink = .RelPermalink -}}
+{{- end -}}
+
+{{- if not $permalink -}}
+  {{- $param := $page.Params.featured_image | default $page.Params.image -}}
+  {{- with $param -}}
+    {{- $fromBundle := $page.Resources.GetMatch . -}}
+    {{- if $fromBundle -}}
+      {{- $img = $fromBundle -}}
+      {{- $permalink = $fromBundle.RelPermalink -}}
+    {{- else -}}
+      {{- $permalink = . | relURL -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if and (not $permalink) .fallback -}}
+  {{- $permalink = .fallback | relURL -}}
+{{- end -}}
+
+{{- if $permalink -}}
+<figure class="{{ $class }}">
+  {{- if $link -}}
+  <a href="{{ $link }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ $permalink }}" alt="" loading="lazy">
+  </a>
+  {{- else -}}
+  <img src="{{ $permalink }}" alt="{{ $alt }}" loading="lazy">
+  {{- end -}}
+</figure>
+{{- end -}}

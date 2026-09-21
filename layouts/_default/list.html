@@ -1,0 +1,57 @@
+{{ partial "header.html" . }}
+
+{{ if not .IsHome }}
+<header class="list-header">
+  {{ if eq .Data.Singular "tag" }}<span class="list-kicker">Marcado em</span>{{ end }}
+  <h1 class="list-title">{{ .Title | default "Posts" }}</h1>
+</header>
+{{ end }}
+
+{{ with .Content }}
+<section class="page-content">
+  {{ . }}
+</section>
+{{ end }}
+
+{{ $pages := .Pages }}
+{{ if .IsHome }}
+  {{ $pages = where site.RegularPages "Section" "in" site.Params.mainSections }}
+  {{ if not $pages }}
+    {{ $pages = site.RegularPages }}
+  {{ end }}
+{{ end }}
+{{ $paginator := .Paginate (where $pages ".Params.type" "!=" "page") (index .Site.Params "paginate" | default 10) }}
+
+{{ if $paginator.Pages }}
+<section>
+  {{ range $paginator.Pages }}
+  <article class="post-list-view">
+    {{ partial "cover.html" (dict "page" . "class" "post-cover" "link" .RelPermalink) }}
+    <header class="post-header-list">
+      <h2 class="post-title-list"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <div class="post-meta-list">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.1.2" }}</time>
+      </div>
+    </header>
+    <p class="post-summary">
+      {{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}…{{ end }}
+    </p>
+  </article>
+  {{ end }}
+</section>
+{{ end }}
+
+{{ if gt $paginator.TotalPages 1 }}
+<footer class="list-footer">
+  <nav class="pagination">
+    {{ if $paginator.HasPrev }}
+    <a class="pagination-prev" href="{{ $paginator.Prev.URL }}">← Página anterior</a>
+    {{ end }}
+    {{ if $paginator.HasNext }}
+    <a class="pagination-next" href="{{ $paginator.Next.URL }}">Próxima página →</a>
+    {{ end }}
+  </nav>
+</footer>
+{{ end }}
+
+{{ partial "footer.html" . }}

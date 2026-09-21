@@ -1,17 +1,30 @@
-{{ define "main" }}
-<div class="series-header">
-    <h1>{{ .Title }}</h1>
-    <p>{{ .Params.description }}</p>
-</div>
+{{ partial "header.html" . }}
 
-<div class="series-posts">
-    <ul>
-        {{ range .Pages }}
-        <li>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-            <p>{{ .Summary }}</p>
-        </li>
-        {{ end }}
-    </ul>
-</div>
+<header class="list-header">
+  <h1 class="list-title">{{ .Title }}</h1>
+  {{ with .Params.description }}
+  <p class="post-summary">{{ . }}</p>
+  {{ end }}
+</header>
+
+{{ with .Content }}
+<section class="page-content">
+  {{ . }}
+</section>
 {{ end }}
+
+{{ if .Pages }}
+<section class="series-posts">
+  {{ range .Pages }}
+  <article class="post-list-view">
+    {{ partial "cover.html" (dict "page" . "class" "post-cover" "link" .RelPermalink) }}
+    <header class="post-header-list">
+      <h2 class="post-title-list"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    </header>
+    <p class="post-summary">{{ .Summary | plainify | htmlUnescape }}</p>
+  </article>
+  {{ end }}
+</section>
+{{ end }}
+
+{{ partial "footer.html" . }}

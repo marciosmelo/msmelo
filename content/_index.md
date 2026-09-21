@@ -1,6 +1,6 @@
 ---
 title: "MSMelo.Blog"
-description: "Este sítio foi criado com o tema Blowfish para Hugo."
+description: "Este sítio foi criado com o tema hugo-brutal para Hugo."
 ---
 
 <!-- Puxe uma cadeira, pegue um copo e veja o que ando escrevendo 🖋️ [aqui]({{< ref "posts" >}}).

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.Language.Locale }}{{ . }}{{ else }}{{ .Site.Language.Lang }}{{ end }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    {{- if not .IsHome }}
+    {{- if eq .Kind "page" }}{{ .Title }}
+    {{- else if .Title }}{{ .Title }}
+    {{- else }}Posts
+    {{- end }} - {{ end }}
+    {{- .Site.Title -}}
+  </title>
+
+  {{- $authorName := "" -}}
+  {{- with .Params.author -}}{{- $authorName = . -}}{{- end -}}
+  {{- if not $authorName -}}{{- with .Site.Params.author.name -}}{{- $authorName = . -}}{{- end -}}{{- end -}}
+
+  {{- if eq .Kind "page" }}
+  <meta name="description" content="{{ .Summary | plainify }}">
+  {{ else }}
+  <meta name="description" content="{{ .Site.Params.description }}">
+  {{ end -}}
+  {{ with $authorName }}<meta name="author" content="{{ . }}">{{ end }}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link href="{{ "css/style.css" | relURL }}" rel="stylesheet" media="all">
+  <link href="{{ printf "%s?v=3" ("css/custom.css" | relURL) }}" rel="stylesheet" media="all">
+
+  {{ partial "favicons.html" . }}
+
+  {{ with .OutputFormats.Get "RSS" }}
+  <link rel="alternate" type="application/rss+xml" href="{{ .RelPermalink }}" title="{{ $.Site.Title }}">
+  {{ end }}
+</head>
+
+<body class="{{if eq .Kind `page` }}single{{else}}list{{ if .IsHome }} home{{ end }}{{end}}">
+  <header class="header">
+    <div class="header-inner">
+      {{ if .IsHome }}
+      <h1 class="logo"><a href="{{ "" | relURL }}">{{ .Site.Title }}</a></h1>
+      {{ else }}
+      <p class="logo"><a href="{{ "" | relURL }}">{{ .Site.Title }}</a></p>
+      {{ end }}
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" autocomplete="off">
+      <label for="nav-toggle" class="nav-burger" aria-label="Abrir menu">
+        <span></span>
+      </label>
+
+      {{ if .Site.Menus.main }}
+      <nav class="menu" aria-label="Principal">
+        <ul>
+          {{ $currentPage := . }}
+          {{ range .Site.Menus.main }}
+          {{ $active := false }}
+          {{ if $currentPage.IsMenuCurrent "main" . }}{{ $active = true }}{{ end }}
+          {{ if and .Page (eq $currentPage.Section .Page.Section) (ne .Page.Section "") }}{{ $active = true }}{{ end }}
+          <li{{ if $active }} class="active"{{ end }}>
+            <a href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
+        </ul>
+      </nav>
+      {{ end }}
+
+      {{ if .Site.Params.social }}
+      <ul class="header-social">
+        {{ range .Site.Params.social }}
+        <li>
+          <a href="{{ .url }}" target="_blank" rel="me noopener" aria-label="{{ .name }}" title="{{ .name }}">
+            {{ partial "icon.html" .name }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
+  </header>
+
+  <main class="main">

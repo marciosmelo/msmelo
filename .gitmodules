@@ -4,3 +4,6 @@
 [submodule "static/tramas"]
 	path = static/tramas
 	url = git@github.com:marciosmelo/tramas.git
+[submodule "themes/brutal"]
+	path = themes/brutal
+	url = https://github.com/tomquirk/hugo-brutal

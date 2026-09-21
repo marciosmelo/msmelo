@@ -1,6 +1,6 @@
 # Site pessoal - msmelo.blog
 
-Este é o repositório do código-fonte do meu site pessoal, construído com o Hugo e usando o template Blowfish.
+Este é o repositório do código-fonte do meu site pessoal, construído com o Hugo e o tema hugo-brutal, com visual neobrutalista.
 
 ## Sobre o Site
 
@@ -11,7 +11,7 @@ Você pode visitar o site online [aqui](https://msmelo.blog).
 ## Tecnologias Utilizadas
 
 - [Hugo](https://gohugo.io/): O framework estático utilizado para gerar o site.
-- [Blowfish](https://github.com/nunocoracao/blowfish): O template utilizado para estilizar o site.
+- [hugo-brutal](https://github.com/tomquirk/hugo-brutal): O tema base, com overlay neobrutalista.
 
 ## Contribuição
 

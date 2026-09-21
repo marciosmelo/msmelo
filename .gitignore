@@ -20,3 +20,10 @@ Thumbs.db
 # Ignora arquivos temporários do sistema
 *.tmp
 .cache/
+
+# Configuração local do editor
+.cursor/
+.cursorrules
+AGENTS.md
+CLAUDE.md
+.claude/

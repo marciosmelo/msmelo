@@ -1,0 +1,38 @@
+{{ partial "header.html" . }}
+
+{{ $authorName := "" }}
+{{ with .Params.author }}
+  {{ $authorName = . }}
+{{ else }}
+  {{ with .Site.Params.author.name }}
+    {{ $authorName = . }}
+  {{ end }}
+{{ end }}
+
+<article class="post-single-view">
+  <header class="header-post-single">
+    <h1 class="post-title">{{ .Title }}</h1>
+    <div class="post-meta">
+      {{ with $authorName }}{{ . }} · {{ end }}
+      {{ if not .Date.IsZero }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.1.2" }}</time>
+      {{ end }}
+    </div>
+  </header>
+
+  {{ partial "cover.html" (dict "page" . "class" "post-cover post-cover-single") }}
+
+  <section class="post-content">{{ .Content }}</section>
+
+  <footer class="post-footer">
+    {{ if .Params.tags }}
+    <ul class="post-tags">
+      {{ range .Params.tags }}
+      <li><a href="{{ "tags/" | relURL }}{{ . | urlize }}/">{{ . }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </footer>
+</article>
+
+{{ partial "footer.html" . }}

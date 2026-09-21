@@ -1,0 +1,25 @@
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    {{ if .Site.Menus.footer }}
+    <nav class="footer-menu">
+      <ul>
+        {{ range .Site.Menus.footer }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+    {{ end }}
+    <p class="footer-copy">
+      <span>&copy; {{ now.Year }} {{ .Site.Title }}</span>
+      {{ with .Site.Params.copyright }}
+      <span>&middot;</span>
+      <span>{{ . | markdownify }}</span>
+      {{ end }}
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
