@@ -1,16 +1,9 @@
 ---
 title: "Blogroll"
 description: "Outros blogs para você conhecer."
-
-cascade:
-  showEdit: false
-  showSummary: false
-  hideFeatureImage: false
 ---
 
-A verdadeira resistência da internet
-
-Mais blogs para você visitar, conhecer e adicionar ao seu leitor RSS 
+A verdadeira resistência da internet — blogs para visitar, conhecer e adicionar ao leitor RSS.
 
 - [Blog de Strule](https://thestrule.wordpress.com/)
 - [Blog do Cadu Silva](https://cadu.cc/blog.html)

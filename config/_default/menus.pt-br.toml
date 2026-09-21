@@ -1,71 +1,44 @@
 [[main]]
-none = "none"
+identifier = "search"
+name = " "
+pageRef = "/search"
+weight = 5
+title = "Pesquisar no site"
+pre = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>'
 
 [[main]]
 name = "Blog"
-pageRef = "posts"
-identifier = "CYwQUovV28"
-weight = 1
+pageRef = "/posts"
+weight = 10
 
 [[main]]
 name = "Livros"
-pageRef = "livros"
-identifier = "aS5b0eLsPN"
-weight = 2
+pageRef = "/livros"
+weight = 20
 
 [[main]]
 name = "Contos"
 url = "https://escritos.msmelo.blog/contos"
-identifier = "contos-sub"
-weight = 3
+weight = 30
+title = "Contos e histórias maiores em escritos.msmelo.blog"
 
 [[main]]
 name = "Newsletter"
 url = "https://marciosmelo.substack.com"
-identifier = "newsletter-main"
-weight = 4
+weight = 40
 
 [[main]]
 name = "Blogroll"
 pageRef = "/blogroll"
-identifier = "ihvVhq0Ho2"
-weight = 5
+weight = 50
 
 [[main]]
 name = "Sobre"
 pageRef = "/sobre"
-identifier = "oxhUFdW53b"
-weight = 6
+weight = 60
 
 [[main]]
-pre = "rss"
+name = "RSS"
 url = "https://msmelo.blog/index.xml"
-identifier = "8gTiR4lXGf"
-weight = 9999
-
-[[main]]
-pre = "mastodon"
-url = "https://bolha.one/@msmelo"
-identifier = "k3GdUHWXE1"
-weight = 9999
-
-[[main]]
-pre = "substack"
-url = "https://marciosmelo.substack.com"
-identifier = "FBUHAsXrD7"
-weight = 9999
-
- [[footer]]
-   name = "Tags"
-   pageRef = "tags"
-   weight = 10
-
- [[footer]]
-   name = "Assine minha newsletter"
-   url = "https://marciosmelo.substack.com"
-   weight = 20
-
- [[footer]]
-   name = "Assine o RSS"
-   url = "https://msmelo.blog/index.xml"
-   weight = 30
+weight = 70
+title = "Feed RSS do site (abra e copie o link)"
