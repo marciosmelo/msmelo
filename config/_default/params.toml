@@ -1,113 +1,80 @@
-colorScheme = "ocean"
-defaultAppearance = "dark"
-autoSwitchAppearance = true
-enableSearch = true
-enableCodeCopy = true
-mainSections = [ "posts" ]
-disableImageOptimization = false
-disableTextInHeader = false
-defaultBackgroundImage = "/img/gamboa.jpg"
-defaultFeaturedImage = "/img/blog.jpg"
-highlightCurrentMenuArea = true
-smartTOC = true
-smartTOCHideUnfocusedChildren = false
+# -- PaperMod params --
+# https://github.com/adityatelange/hugo-PaperMod/wiki/Features
 
-[header]
-layout = "fixed"
-showAuthor=true
+env = "production"
+defaultTheme = "auto"
+ShowReadingTime = true
+ShowShareButtons = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowWordCount = false
+ShowRssButtonInSectionTermList = true
+UseHugoToc = true
+disableSpecial1stPost = true
+disableScrollToTop = false
+hideFooter = false
+hideMeta = false
+hideSummary = false
+ShowFullTextinRSS = false
+mainSections = ["posts"]
+homeRecentCount = 5
 
-[footer]
-showMenu = true
-showCopyright = true
-showThemeAttribution = true
-showAppearanceSwitcher = true
-showScrollToTop = true
+# Capas: imagens nos bundles (featured.*) são detectadas no override de cover.html
+[cover]
+  hidden = false
+  hiddenInList = false
+  hiddenInSingle = false
+  responsiveImages = true
+  linkFullImages = true
 
-[homepage]
-layout = "background"
-homepageImage = "/img/porto.jpg"
-showAuthor = true
-showRecent = true
-showRecentItems = "10"
-showMoreLink = true
-showMoreLinkDest = "posts"
-cardView = true
-cardViewScreenWidth = true
-layoutBackgroundBlur = true
+[label]
+  text = "MSMelo.Blog"
+  icon = "/img/msmelo-favicon-color.png"
+  iconHeight = 28
 
-[article]
-showDate = true
-showViews = false
-showLikes = true
-showDateUpdated = true
-showAuthor = true
-showHero = true
-heroStyle = "background"
-layoutBackgroundBlur = true
-showBreadcrumbs = true
-showDraftLabel = true
-showEdit = false
-#editURL = "https://github.com/nunocoracao/blowfish/tree/main/exampleSite/content"
-editAppendPath = true
-seriesOpened = false
-showHeadingAnchors = true
-showPagination = true
-invertPagination = false
-showReadingTime = true
-showTableOfContents = true
-showRelatedContent = true
-relatedContentLimit = 6
-showTaxonomies = true
-showAuthorsBadges = true
-showWordCount = false
-sharingLinks = [ "twitter", "whatsapp", "telegram", "pinterest", "facebook", "email" ]
-showZenMode = false
+[assets]
+  favicon = "/img/msmelo-favicon-color.png"
+  favicon16x16 = "/img/msmelo-favicon-color.png"
+  favicon32x32 = "/img/msmelo-favicon-color.png"
+  apple_touch_icon = "/img/msmelo-favicon-color.png"
+  disableHLJS = false
+  disableFingerprinting = false
 
-[list]
-showHero = true
-heroStyle = "background"
-layoutBackgroundBlur = true
-layoutBackgroundHeaderSpace = false
-showBreadcrumbs = false
-showSummary = true
-showViews = false
-showLikes = false
-showTableOfContents = true
-showCards = true
-groupByYear = true
-cardView = true
-cardViewScreenWidth = true
-constrainItemsWidth = true
+# Bloco compacto na home (foto + frases) — o partial home_info.html renderiza o autor
+[homeInfoParams]
+  AlignSocialIconsTo = "center"
 
-[sitemap]
-excludedKinds = []
+# Foto + headline na home (bio fica só em /sobre)
+[author]
+  name = "M.S.Melo"
+  image = "eu-autor.jpg"
+  headline = "Bairrista praticante | Especialista em procrastinação | Escritor nas horas vagas."
 
-[taxonomy]
-showTermCount = true
-showHero = true
-heroStyle = "background"
-showBreadcrumbs = false
-showViews = false
-showLikes = false
-showTableOfContents = true
-cardView = false
+[[socialIcons]]
+  name = "mastodon"
+  url = "https://bolha.one/@msmelo"
 
-[term]
-showHero = true
-heroStyle = "background"
-showBreadcrumbs = false
-showViews = false
-showLikes = false
-showTableOfContents = true
-groupByYear = false
-cardView = true
-cardViewScreenWidth = false
-  
-[firebase]
-  apiKey = "AIzaSyB5skqvTGFBj1zNMQugvvy-U0aMUIF67ck"
-  authDomain = "msmelo-751ee.firebaseapp.com"
-  projectId = "msmelo-751ee"
-  storageBucket = "msmelo-751ee.appspot.com"
-  messagingSenderId = "480375533959"
-  appId = "1:480375533959:web:aac02cce61ea6ad3c3e322"
-  measurementId = "G-PWQT6Y8M01"
+[[socialIcons]]
+  name = "bluesky"
+  url = "https://bsky.app/profile/marciosmelo.bsky.social"
+
+[[socialIcons]]
+  name = "rss"
+  url = "https://msmelo.blog/index.xml"
+
+[[socialIcons]]
+  name = "github"
+  url = "https://github.com/marciosmelo"
+
+[[socialIcons]]
+  name = "email"
+  url = "mailto:marciomelo@gmail.com"
+
+[[socialIcons]]
+  name = "instagram"
+  url = "https://instagram.com/marciosmelo"
+
+[[socialIcons]]
+  name = "flickr"
+  url = "https://www.flickr.com/photos/mmelo/"

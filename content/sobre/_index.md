@@ -1,33 +1,38 @@
 ---
-title: "M. S. Melo"
-description: "Compartilhando minhas histórias, publicações e experiências."
+title: "Sobre"
 ---
 
-# Bem-vindo ao Meu Sítio 🏡
+Sou baiano de Conceição do Almeida, engenheiro de software por profissão e escritor por teimosia. Ando *na cocó* atrás de histórias que brotam quando o cotidiano desafia, ou a procrastinação permite.
 
-Olá! Eu sou **M. S. Melo**, um baiano natural da gloriosa Conceição do Almeida. Nas horas vagas me transformo em um contador de histórias.
+Criei este site para ter **tudo o que escrevo e publico num lugar só meu**, sem a mão invisível do mercado nem a mercê de algoritmos.
 
-Criei esse site para ter **tudo o que escrevo e publico num lugar só meu**. Sem a mão invisível do mercado ou a mercê de algoritmos capitalistas. 
+## Quem sou
 
-## Sobre Mim 💡
+Desde cedo aprendi que a vida é uma grande coletânea de causos, alguns vividos, outros inventados. Em horário comercial convivo com IAs que prometem resolver tudo e, na prática, inventam metade e quebram o resto. Já perdi a graça de caçar bugs; agora passo o dia xingando um chatbot que se desculpa em loop e me devolve o mesmo erro com confiança de vendedor.
 
-Sou **Engenheiro de Software** em horário comercial e trabalho como detetive de códigos muito mal escritos. Ao contrário do recomendado pelo teste vocacional e por minhas notas, formei-me em Sistemas de Informação e concluí o curso na força do ódio.
+Já [caí de um carro em movimento](https://marciosmelo.substack.com/p/como-cair-de-um-carro-em-movimento), fissurei o crânio numa aposta besta e torço por um time que nunca vence. Escrevo porque certas histórias não pedem licença nem puxam uma cadeira: ficam esperando serem encontradas. Entre commits e desculpas de máquina, sigo *na espinha mole*, com uma lambuzada de dendê e uns três minutos de atraso; o suficiente para dar tempo de rir antes que isso aqui vire uma tragédia.
 
-Sou **autor** do conto *"Valentina e o robô sincero"* presente na antologia *[Ridendo castigat mores (2025)](https://www.terraredonda.com.br/product-page/ridendo-castigat-mores?srsltid=AfmBOorDbi-uw8rQYDWcJFIZqvJZmB9QP2__uQ5EpxcKtSVzWLB2i9h9)* e de publicações independentes como *“[Um Natal da Disgraça (2022)](https://www.amazon.com.br/Um-Natal-Disgra%C3%A7a-M-Melo-ebook/dp/B0BQ4NTXSG)”*. Escrevo contos, causos, [crônicas](https://marciosmelo.substack.com) e ensaios com manchas de dendê. Sou bairrista praticante e minha escrita é uma jornada entre a realidade e a imaginação com toda *malemolência* baiana.
+Formei-me em Sistemas de Informação na força do ódio (contra o teste vocacional e as notas). Sou bairrista praticante; a escrita fica entre realidade e imaginação, com toda a *malemolência* baiana.
 
-Já sobrevivi a [uma queda de um carro em movimento](https://marciosmelo.substack.com/p/como-cair-de-um-carro-em-movimento), tenho o crânio fissurado por conta de uma aposta com skate, torço para um time fatal e colossal e acredito que ainda possuo mais umas duas ou três vidas para gastar.
+## Publicações
 
-## Onde me Encontrar 🕵🏽‍♂️
+Livros e antologias; detalhes e links de compra em [Livros](/livros/).
+
+- **[Sombras, Fantasmas e Dois Charutos Fumegantes](https://editoraurutau.com/titulo/sombras-fantasmas-e-dois-charutos-fumegantes)** (romance, Editora Urutau, 2025)
+- **[Literoutubro 2024: Disutópicos](https://forms.gle/My8corZwGCB9ZPLM7)** (antologia Toranja, 2026); textos meus do Literoutubro
+- **[Ridendo castigat mores](https://www.terraredonda.com.br/product-page/ridendo-castigat-mores)** (antologia, 2025); conto *Valentina e o robô sincero*
+- **[Valentina e o Robô Sincero](https://www.amazon.com.br/dp/B0CN3KTJYR)** (ebook, 2023)
+- **[Um Natal da Disgraça](https://www.amazon.com.br/Um-Natal-Disgra%C3%A7a-M-Melo-ebook/dp/B0BQ4NTXSG)** (ebook, 2022)
+
+Contos e histórias maiores também em [escritos.msmelo.blog](https://escritos.msmelo.blog/contos).
+
+## Onde me encontrar
 
 - Mastodon: [@msmelo@bolha.one](https://bolha.one/@msmelo)
-- Newsletter: [Assine minha newsletter](https://marciosmelo.substack.com)
+- Newsletter: [marciosmelo.substack.com](https://marciosmelo.substack.com)
+- Neste site: [últimas postagens](/posts/) · [RSS](/index.xml)
 
 ---
 
-[Veja minhas últimas postagens](/posts/)
-
-[Assine nosso RSS](/index.xml)
-
----
-*“A tradição de todas as gerações mortas oprime como um pesadelo o cérebro dos vivos.”* 
-(**Karl Marx**)
+*“A vida devia ser duas; uma para ensaiar, outra para viver a sério.”*  
+(**João Ubaldo Ribeiro**, *A Casa dos Budas Ditosos*, 1999)

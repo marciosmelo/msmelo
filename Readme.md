@@ -1,23 +1,24 @@
-# Site pessoal - msmelo.blog
+# Site pessoal — msmelo.blog
 
-Este é o repositório do código-fonte do meu site pessoal, construído com o Hugo e usando o template Blowfish.
+Site pessoal de **M. S. Melo**, construído com [Hugo](https://gohugo.io/) e o tema [PaperMod](https://github.com/adityatelange/hugo-PaperMod).
 
-## Sobre o Site
+## Sobre
 
-O meu site pessoal é onde compartilho artigos, projetos e pensamentos sobre tecnologia, programação e outras coisas que me interessam.
+Crônicas, contos, causos e ensaios. Contos maiores também em [escritos.msmelo.blog](https://escritos.msmelo.blog/contos).
 
-Você pode visitar o site online [aqui](https://msmelo.blog).
+Online: [msmelo.blog](https://msmelo.blog).
 
-## Tecnologias Utilizadas
+## Desenvolvimento
 
-- [Hugo](https://gohugo.io/): O framework estático utilizado para gerar o site.
-- [Blowfish](https://github.com/nunocoracao/blowfish): O template utilizado para estilizar o site.
+```bash
+hugo server -D
+```
 
-## Contribuição
+## Tecnologias
 
-Se você encontrar problemas, bugs ou tiver sugestões de melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request neste repositório.
+- Hugo (extended)
+- PaperMod
 
 ## Licença
 
-Este projeto é licenciado sob a [MIT License](LICENSE).
-\ntrigger: hostinger-deploy 2025-09-27T15:50:55Z
+MIT.
