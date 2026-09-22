@@ -75,6 +75,15 @@ body {
   font-size: 0.92rem;
 }
 
+.logo a svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+  flex-shrink: 0;
+  color: var(--primary);
+  border-radius: 0;
+}
+
 #menu a[title="Pesquisar no site"] {
   font-size: 0;
   line-height: 0;
@@ -106,9 +115,18 @@ body {
     min-height: 2.1rem;
   }
 
-  .logo a {
-    font-size: 1.2rem;
-  }
+.logo a {
+  font-size: 1.2rem;
+}
+
+.logo a svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+  flex-shrink: 0;
+  color: var(--primary);
+  border-radius: 0;
+}
 
   .menu {
     flex-wrap: wrap;
