@@ -1,17 +1,41 @@
 {{ define "main" }}
-<div class="series-header">
-    <h1>{{ .Title }}</h1>
-    <p>{{ .Params.description }}</p>
-</div>
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{- with .Params.description }}
+  <div class="post-description">{{ . }}</div>
+  {{- end }}
+</header>
 
-<div class="series-posts">
-    <ul>
-        {{ range .Pages }}
-        <li>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-            <p>{{ .Summary }}</p>
-        </li>
-        {{ end }}
-    </ul>
-</div>
+{{- $pages := .Pages.ByParam "series_order" }}
+{{- $hasOrder := false }}
+{{- range .Pages }}
+  {{- if isset .Params "series_order" }}{{ $hasOrder = true }}{{ end }}
+{{- end }}
+{{- if not $hasOrder }}
+  {{- $pages = .Pages.ByDate }}
+{{- end }}
+
+{{- range $pages }}
+<article class="post-entry">
+  {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
+  {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+      {{- with .Params.series_order }}<span class="series-order">{{ . }}.</span> {{ end -}}
+      {{ .Title }}
+    </h2>
+  </header>
+  {{- if (ne (.Param "hideSummary") true) }}
+  <div class="entry-content">
+    <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+  </div>
+  {{- end }}
+  {{- if not (.Param "hideMeta") }}
+  <footer class="entry-footer">
+    {{- partial "post_meta.html" . -}}
+  </footer>
+  {{- end }}
+  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+</article>
+{{- end }}
 {{ end }}

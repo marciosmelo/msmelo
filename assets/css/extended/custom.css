@@ -367,3 +367,107 @@ body {
   padding-inline-start: 0.35rem;
 }
 
+/* ---- Passe de leitura (página do post) ---- */
+
+.post-single .post-title {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.post-single .post-content {
+  max-width: 38rem;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+.post-single .post-content p:not(:last-child),
+.post-single .post-content ul:not(:last-child),
+.post-single .post-content ol:not(:last-child),
+.post-single .post-content blockquote:not(:last-child),
+.post-single .post-content figure:not(:last-child) {
+  margin-bottom: 1.25em;
+}
+
+.post-single .post-content blockquote {
+  margin: 1.5rem 0;
+  padding: 0.35rem 0 0.35rem 1.15rem;
+  border-inline-start: 0.22rem solid var(--border);
+  color: var(--secondary);
+  font-style: italic;
+}
+
+.post-single .post-content blockquote p {
+  color: inherit;
+}
+
+.post-single .post-content blockquote strong {
+  font-style: normal;
+  color: var(--content);
+}
+
+/* ---- Série (aviso no post) ---- */
+
+.series-box {
+  max-width: 38rem;
+  margin: 0 0 1.5rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: transparent;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--secondary);
+}
+
+.series-box__lead {
+  margin: 0 0 0.55rem;
+  color: var(--secondary);
+}
+
+.series-box__name {
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.series-box__list {
+  margin: 0;
+  padding-inline-start: 1.25rem;
+}
+
+.series-box__list li {
+  margin: 0.2rem 0;
+}
+
+.series-box__list a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.15em;
+}
+
+.series-box__list a:hover {
+  text-decoration-color: var(--primary);
+}
+
+.series-box__list .is-current {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.series-box__current em {
+  font-weight: 400;
+  color: var(--secondary);
+  font-style: normal;
+}
+
+.series-order {
+  color: var(--secondary);
+  font-weight: 600;
+  margin-inline-end: 0.15em;
+}
+
