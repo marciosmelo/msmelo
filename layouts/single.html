@@ -34,7 +34,6 @@
   {{- partial "toc.html" . }}
   {{- end }}
 
-  {{- /* Série: aviso antes do texto (como no Blowfish) */ -}}
   {{- partial "series.html" . }}
 
   {{- if .Content }}
@@ -46,6 +45,10 @@
   {{- end }}
 
   {{- partial "extend_post_content.html" . }}
+
+  {{- if and site.Params.ShowLikes (eq .Section "posts") }}
+  {{- partial "likes.html" . }}
+  {{- end }}
 
   <footer class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
