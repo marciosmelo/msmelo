@@ -95,7 +95,53 @@ body {
   height: 18px;
 }
 
-/* Autor */
+/* Menu: PaperMod usa scroll horizontal; no mobile preferimos quebrar linha */
+@media screen and (max-width: 900px) {
+  .header-nav {
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: 0.15rem;
+    line-height: 1.25;
+    padding-block: 0.55rem 0.4rem;
+  }
+
+  .logo {
+    justify-content: space-between;
+    min-height: 2.1rem;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    white-space: normal;
+    column-gap: 0.75rem;
+    row-gap: 0.3rem;
+    justify-content: flex-start;
+    padding-bottom: 0.1rem;
+  }
+
+  .menu a {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  /* Esconde seta de link externo; mantém a lupa de busca */
+  .menu a svg[width="12"] {
+    display: none;
+  }
+}
+
+/* Autor — sem o min-height hero do .first-entry do PaperMod */
+.author-card.first-entry,
+.first-entry.home-info.author-card {
+  min-height: 0;
+  justify-content: flex-start;
+  margin: 0.35rem 0 1.25rem;
+}
 
 .author-card {
   background: transparent;
@@ -103,7 +149,7 @@ body {
   border-bottom: 1px solid var(--border);
   border-radius: 0;
   margin-bottom: calc(var(--gap) * 1.25);
-  padding: calc(var(--gap) * 0.5) 0 calc(var(--gap) * 1.25);
+  padding: 0.35rem 0 1.1rem;
   box-shadow: none;
   text-align: center;
 }
@@ -135,27 +181,47 @@ body {
 }
 
 .author-card__name {
-  font-size: 1.85rem;
+  font-size: clamp(1.35rem, 4.5vw, 1.85rem);
   margin: 0;
   line-height: 1.2;
 }
 
-.author-card__headline {
-  margin: 0;
-  font-size: 1.12rem;
-  line-height: 1.4;
-  color: var(--secondary);
-  white-space: nowrap;
+.author-card__name a {
+  color: inherit;
+  text-decoration: none;
 }
 
-@media (max-width: 640px) {
-  .author-card__headline {
-    font-size: clamp(0.72rem, 2.8vw, 1.05rem);
-  }
+.author-card__headline {
+  margin: 0;
+  font-size: clamp(0.95rem, 2.8vw, 1.12rem);
+  line-height: 1.45;
+  color: var(--secondary);
+  white-space: normal;
+  text-wrap: balance;
+  max-width: 36rem;
+  padding-inline: 0.25rem;
 }
 
 .author-card .social-icons {
   margin-top: 0.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 0.35rem;
+}
+
+@media (max-width: 640px) {
+  .author-card__avatar {
+    width: 112px;
+    height: 112px;
+  }
+
+  .author-card__inner {
+    gap: 0.4rem;
+  }
+
+  .author-card .social-icons a {
+    padding: 0.35rem;
+  }
 }
 
 /* Lista */
