@@ -1,8 +1,6 @@
 {{- if and (eq .Section "posts") .IsPage site.Params.postAside }}
 {{- $a := site.Params.postAside }}
-{{- $subj := printf "Sobre: %s" .Title | querify }}
-{{- $body := printf "Li %s\n\n" .Permalink | querify }}
-{{- $mail := printf "mailto:%s?subject=%s&body=%s" $a.email $subj $body }}
+{{- $mail := printf "mailto:%s?%s" $a.email (querify "subject" (printf "Sobre: %s" .Title) "body" (printf "Li %s\n\n" .Permalink)) }}
 <aside class="post-aside" aria-label="Depois da leitura">
   <p class="post-aside__line">
     <strong>{{ $a.commentLead }}</strong>
