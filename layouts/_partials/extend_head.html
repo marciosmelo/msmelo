@@ -2,10 +2,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
 
-{{- /* Fediverse: criador (Mastodon link attribution) + ponte ActivityPub (Bridgy Fed) */ -}}
+{{- /* Liga o site à conta Mastodon pessoal (não é ponte Bridgy / Bluesky) */ -}}
 {{- with site.Params.fediverseCreator }}
 <meta name="fediverse:creator" content="{{ . }}">
-{{- end }}
-{{- if or .IsPage .IsHome .IsSection }}
-<link rel="alternate" type="application/activity+json" href="https://fed.brid.gy/r/{{ .Permalink }}">
 {{- end }}
