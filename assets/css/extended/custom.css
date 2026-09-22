@@ -326,6 +326,7 @@ body {
   overflow: hidden;
   border-radius: var(--radius);
   width: 100%;
+  max-width: 38rem;
 }
 
 .post-single .entry-cover img {
