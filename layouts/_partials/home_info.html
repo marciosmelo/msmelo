@@ -1,13 +1,14 @@
-{{- /* Home: foto + nome + headline + redes (sem bio longa) */ -}}
+{{- /* Home: foto + nome + headline + redes (sem bio longa).
+     h-card representative para Bridgy Fed / Fediverse. */ -}}
 {{- with site.Params.author }}
-<article class="first-entry home-info author-card">
+<article class="first-entry home-info author-card h-card">
   <div class="author-card__inner">
     {{- $imgPath := .image | default "eu-autor.jpg" }}
     {{- $img := resources.Get $imgPath }}
     {{- if not $img }}{{ $img = resources.Get (printf "img/%s" $imgPath) }}{{ end }}
     {{- if $img }}
       {{- $avatar := $img.Fill "240x240 Center" }}
-      <img class="author-card__avatar"
+      <img class="author-card__avatar u-photo"
            src="{{ $avatar.RelPermalink }}"
            alt="{{ .name }}"
            width="140"
@@ -15,10 +16,16 @@
            loading="eager" />
     {{- end }}
 
-    <h1 class="author-card__name">{{ .name }}</h1>
+    <h1 class="author-card__name p-name">
+      <a class="u-url" rel="me" href="{{ site.BaseURL }}">{{ .name }}</a>
+    </h1>
+    {{- /* Handle Fediverse no domínio (Bridgy Fed) */ -}}
+    <a class="u-url" href="acct:msmelo.blog@msmelo.blog" hidden></a>
+    {{- /* Verificação Bridgy / Mastodon (rel=me) */ -}}
+    <a rel="me" href="https://web.brid.gy/r/https://msmelo.blog/" hidden></a>
 
     {{- with .headline }}
-    <p class="author-card__headline">{{ . }}</p>
+    <p class="author-card__headline p-note">{{ . }}</p>
     {{- end }}
 
     <footer class="entry-footer">
