@@ -483,3 +483,43 @@ body {
   margin-inline-end: 0.15em;
 }
 
+/* ---- Likes (Firebase) ---- */
+
+.post-likes {
+  max-width: 38rem;
+  margin: 1.25rem 0 0.25rem;
+}
+
+.post-likes__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  color: var(--primary);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+.post-likes__btn:hover {
+  border-color: var(--secondary);
+}
+
+.post-likes__btn[aria-pressed="true"] {
+  color: #b33a3a;
+  border-color: #b33a3a;
+}
+
+.post-likes__icon {
+  display: inline-flex;
+}
+
+.post-likes__count {
+  font-variant-numeric: tabular-nums;
+  min-width: 1ch;
+}
+

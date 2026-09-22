@@ -19,6 +19,7 @@ hideSummary = false
 ShowFullTextinRSS = false
 mainSections = ["posts"]
 homeRecentCount = 5
+ShowLikes = true
 
 # Conta Mastodon pessoal. Blog no Fediverse via Bridgy: @msmelo.blog@msmelo.blog (sem usar a bolha).
 fediverseCreator = "@msmelo@bolha.one"
@@ -43,6 +44,16 @@ fediverseCreator = "@msmelo@bolha.one"
   apple_touch_icon = "/img/msmelo-favicon-color.png"
   disableHLJS = false
   disableFingerprinting = false
+
+# Firebase (mesmo projeto do Blowfish — likes Firestore)
+[firebase]
+  apiKey = "AIzaSyB5skqvTGFBj1zNMQugvvy-U0aMUIF67ck"
+  authDomain = "msmelo-751ee.firebaseapp.com"
+  projectId = "msmelo-751ee"
+  storageBucket = "msmelo-751ee.appspot.com"
+  messagingSenderId = "480375533959"
+  appId = "1:480375533959:web:aac02cce61ea6ad3c3e322"
+  measurementId = "G-PWQT6Y8M01"
 
 # Bloco compacto na home (foto + frases) — o partial home_info.html renderiza o autor
 [homeInfoParams]
