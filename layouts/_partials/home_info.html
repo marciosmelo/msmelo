@@ -1,4 +1,4 @@
-{{- /* Home: foto + nome + headline + redes (sem bio longa). h-card leve. */ -}}
+{{- /* Home: foto + nome + headline + redes. h-card p/ Bridgy Fed (só Fediverse; Bluesky desliga no painel). */ -}}
 {{- with site.Params.author }}
 <article class="first-entry home-info author-card h-card">
   <div class="author-card__inner">
@@ -18,13 +18,12 @@
     <h1 class="author-card__name p-name">
       <a class="u-url" rel="me" href="{{ site.BaseURL }}">{{ .name }}</a>
     </h1>
+    <a class="u-url" href="acct:msmelo.blog@msmelo.blog" hidden></a>
+    <a rel="me" href="https://web.brid.gy/r/https://msmelo.blog/" hidden></a>
 
     {{- with .headline }}
     <p class="author-card__headline p-note">{{ . }}</p>
     {{- end }}
-
-    {{- /* Pede ao Bridgy Fed para desligar a ponte (AP + Bluesky) deste domínio */ -}}
-    <span class="visually-hidden">#nobridge</span>
 
     <footer class="entry-footer">
       {{ partial "social_icons.html" (dict "align" (site.Params.homeInfoParams.AlignSocialIconsTo | default "center")) }}

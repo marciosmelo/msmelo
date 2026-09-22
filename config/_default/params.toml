@@ -20,7 +20,7 @@ ShowFullTextinRSS = false
 mainSections = ["posts"]
 homeRecentCount = 5
 
-# Conta Mastodon pessoal (meta fediverse:creator). Sem Bridgy Fed.
+# Conta Mastodon pessoal. Blog no Fediverse via Bridgy: @msmelo.blog@msmelo.blog (sem usar a bolha).
 fediverseCreator = "@msmelo@bolha.one"
 
 # Capas: imagens nos bundles (featured.*) são detectadas no override de cover.html
