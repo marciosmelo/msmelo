@@ -1,3 +1,6 @@
+# Bridgy Fed — WebFinger / host-meta no domínio (handle @msmelo.blog@msmelo.blog)
+# Docs: https://fed.brid.gy/docs
+# Query string (resource=…) é preservada pelo Apache no redirect.
 RewriteEngine on
 RewriteBase /
 RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redirect=302,last]
