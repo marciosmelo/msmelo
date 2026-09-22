@@ -20,6 +20,9 @@ ShowFullTextinRSS = false
 mainSections = ["posts"]
 homeRecentCount = 5
 
+# Conta Mastodon pessoal (meta fediverse:creator). O blog federado é @msmelo.blog@msmelo.blog via Bridgy Fed.
+fediverseCreator = "@msmelo@bolha.one"
+
 # Capas: imagens nos bundles (featured.*) são detectadas no override de cover.html
 [cover]
   hidden = false
