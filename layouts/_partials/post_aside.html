@@ -1,0 +1,18 @@
+{{- if and (eq .Section "posts") .IsPage site.Params.postAside }}
+{{- $a := site.Params.postAside }}
+{{- $subj := printf "Sobre: %s" .Title | querify }}
+{{- $body := printf "Li %s\n\n" .Permalink | querify }}
+{{- $mail := printf "mailto:%s?subject=%s&body=%s" $a.email $subj $body }}
+<aside class="post-aside" aria-label="Depois da leitura">
+  <p class="post-aside__line">
+    <strong>{{ $a.commentLead }}</strong>
+    {{ $a.commentBefore }}<a href="{{ $mail }}">{{ $a.commentLink }}</a>{{ $a.commentAfter }}
+  </p>
+  <p class="post-aside__line">
+    <strong>{{ $a.hateLead }}</strong>
+    <button type="button" class="post-aside__share" data-share-url="{{ .Permalink }}" data-share-title="{{ .Title }}">{{ $a.hateLink }}</button>
+    {{ $a.hateRest }}
+    <span class="post-aside__copied" hidden>link copiado</span>
+  </p>
+</aside>
+{{- end -}}
