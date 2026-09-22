@@ -1,10 +1,8 @@
-{{- /* Aviso de série (estilo Blowfish): “este texto faz parte da série…” */ -}}
 {{- $terms := .GetTerms "series" }}
 {{- if $terms }}
 {{- range $terms }}
 {{- $term := . }}
 {{- $pages := $term.Pages.ByParam "series_order" }}
-{{- /* Se ninguém tiver series_order, ByParam pode ordenar estranho — fallback por data */ -}}
 {{- $hasOrder := false }}
 {{- range $term.Pages }}
   {{- if isset .Params "series_order" }}{{ $hasOrder = true }}{{ end }}

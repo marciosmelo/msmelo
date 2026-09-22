@@ -1,4 +1,3 @@
-/* Likes Firestore — mesma coleção/IDs do Blowfish (msmelo-751ee) */
 (function () {
   if (typeof firebase === "undefined" || typeof firebaseConfig === "undefined") return;
 

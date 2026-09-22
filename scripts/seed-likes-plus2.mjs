@@ -1,8 +1,4 @@
 #!/usr/bin/env node
-/**
- * One-shot: soma +2 likes em todos os posts (IDs Blowfish / Firestore msmelo-751ee).
- * Uso: node scripts/seed-likes-plus2.mjs
- */
 import { readdirSync, statSync } from "fs";
 import { join, relative } from "path";
 
@@ -22,7 +18,6 @@ function walkMarkdown(dir, out = []) {
 }
 
 function blowfishLikeId(absPath) {
-  // content/posts/foo/index.md → likes_posts-foo-index.md
   const rel = relative(join(ROOT, "content"), absPath).replace(/\\/g, "/");
   return "likes_" + rel.replaceAll("/", "-");
 }

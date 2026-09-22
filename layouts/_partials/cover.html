@@ -1,5 +1,4 @@
 {{- with .cxt }}
-{{- /* Prefer Params.cover.image; fallback to featured/cover/thumbnail in the page bundle. */}}
 {{- $coverParam := .Params.cover.image }}
 {{- $featured := (.Resources.ByType "image").GetMatch "*feature*" }}
 {{- if not $featured }}{{ $featured = (.Resources.ByType "image").GetMatch "{*cover*,*thumbnail*}" }}{{ end }}

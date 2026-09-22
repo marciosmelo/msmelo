@@ -1,5 +1,3 @@
-# Bridgy Fed — WebFinger no domínio → handle @msmelo.blog@msmelo.blog (Fediverse).
-# Bluesky: desligar no painel https://fed.brid.gy/web/msmelo.blog (settings), não aqui.
 RewriteEngine on
 RewriteBase /
 RewriteRule ^.well-known/(host-meta|webfinger).* https://fed.brid.gy/$0  [redirect=302,last]

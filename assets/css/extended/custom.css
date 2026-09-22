@@ -1,17 +1,3 @@
-/* Leitura: tipografia + cores mais claras (override do PaperMod) */
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
 :root {
   --font-ui: "IBM Plex Sans", "Segoe UI", sans-serif;
   --font-body: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
@@ -89,7 +75,6 @@ body {
   font-size: 0.92rem;
 }
 
-/* Lupa no menu (esconde texto residual do título da página) */
 #menu a[title="Pesquisar no site"] {
   font-size: 0;
   line-height: 0;
@@ -107,7 +92,6 @@ body {
   height: 18px;
 }
 
-/* Menu: PaperMod usa scroll horizontal; no mobile preferimos quebrar linha */
 @media screen and (max-width: 900px) {
   .header-nav {
     flex-direction: column;
@@ -141,13 +125,11 @@ body {
     line-height: 1.3;
   }
 
-  /* Esconde seta de link externo; mantém a lupa de busca */
   .menu a svg[width="12"] {
     display: none;
   }
 }
 
-/* Autor — sem o min-height hero do .first-entry do PaperMod */
 .author-card.first-entry,
 .first-entry.home-info.author-card {
   min-height: 0;
@@ -236,8 +218,6 @@ body {
   }
 }
 
-/* Lista */
-
 .post-entry {
   background: transparent !important;
   border: none;
@@ -322,7 +302,6 @@ body {
   text-underline-offset: 0.18em;
 }
 
-/* Paginação legível (só em /posts se voltar a paginar) */
 .page-footer .pagination {
   display: flex;
   justify-content: center;
@@ -343,7 +322,6 @@ body {
   font-weight: 700;
 }
 
-/* Capas no post aberto: mesmo tamanho (tema deixa solto por padrão) */
 .post-single .entry-cover {
   overflow: hidden;
   border-radius: var(--radius);
@@ -365,7 +343,6 @@ body {
   }
 }
 
-/* Blogroll: hover nos links */
 .post-content ul li a {
   text-decoration: underline;
   text-decoration-color: transparent;
@@ -378,8 +355,6 @@ body {
   text-decoration-color: var(--primary);
   padding-inline-start: 0.35rem;
 }
-
-/* ---- Passe de leitura (página do post) ---- */
 
 .post-single .post-title {
   font-size: clamp(1.75rem, 5vw, 2.5rem);
@@ -418,8 +393,6 @@ body {
   font-style: normal;
   color: var(--content);
 }
-
-/* ---- Série (aviso no post) ---- */
 
 .series-box {
   max-width: 38rem;
@@ -482,8 +455,6 @@ body {
   font-weight: 600;
   margin-inline-end: 0.15em;
 }
-
-/* ---- Likes (Firebase) ---- */
 
 .post-likes {
   max-width: 38rem;
