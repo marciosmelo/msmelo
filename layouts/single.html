@@ -50,6 +50,8 @@
   {{- partial "likes.html" . }}
   {{- end }}
 
+  {{- partial "post_aside.html" . }}
+
   <footer class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
     <ul class="post-tags">

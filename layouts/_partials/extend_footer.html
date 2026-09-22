@@ -16,3 +16,7 @@
 {{- $likes := resources.Get "js/likes.js" | minify }}
 <script src="{{ $likes.RelPermalink }}" defer></script>
 {{- end -}}
+{{- if and .IsPage (eq .Section "posts") site.Params.postAside }}
+{{- $aside := resources.Get "js/post-aside.js" | minify }}
+<script src="{{ $aside.RelPermalink }}" defer></script>
+{{- end -}}

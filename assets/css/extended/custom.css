@@ -494,3 +494,47 @@ body {
   min-width: 1ch;
 }
 
+.post-aside {
+  max-width: 38rem;
+  margin: 0.85rem 0 0.25rem;
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--secondary);
+}
+
+.post-aside__line {
+  margin: 0.2rem 0;
+}
+
+.post-aside__line strong {
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.post-aside a,
+.post-aside__share {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-color: transparent;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.post-aside a:hover,
+.post-aside__share:hover {
+  text-decoration-color: var(--primary);
+}
+
+.post-aside__copied {
+  margin-inline-start: 0.4rem;
+  font-size: 0.8em;
+  color: var(--secondary);
+  opacity: 0.85;
+}
+

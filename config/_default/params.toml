@@ -23,6 +23,16 @@ ShowLikes = true
 
 fediverseCreator = "@msmelo@bolha.one"
 
+[postAside]
+  email = "marciomelo@gmail.com"
+  commentLead = "Quer comentar?"
+  commentBefore = "Só enviar um "
+  commentLink = "e-mail"
+  commentAfter = " — falar comigo, sabe? Como faziam os Maias."
+  hateLead = "Não gostou?"
+  hateLink = "Compartilhe"
+  hateRest = "com alguém que você odeie e não sofra sozinho."
+
 [cover]
   hidden = false
   hiddenInList = false
