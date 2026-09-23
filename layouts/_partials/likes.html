@@ -1,13 +1,5 @@
 {{- if and site.Params.ShowLikes site.Params.firebase }}
-{{- $id := "" }}
-{{- with .File }}
-  {{- $path := .Path }}
-  {{- range $.AllTranslations }}
-    {{- $lang := printf ".%s.md" .Lang }}
-    {{- $path = replace $path $lang ".md" }}
-  {{- end }}
-  {{- $id = printf "likes_%s" $path }}
-{{- end }}
+{{- $id := partial "like_oid.html" . }}
 {{- if $id }}
 <div class="post-likes" data-oid-likes="{{ $id }}">
   <button type="button" id="button_likes" class="post-likes__btn" aria-pressed="false" aria-label="Curtir">

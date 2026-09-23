@@ -1,4 +1,6 @@
-{{- if and .IsPage (eq .Section "posts") site.Params.ShowLikes site.Params.firebase }}
+{{- $showLikes := and site.Params.ShowLikes site.Params.firebase }}
+{{- $onPost := and .IsPage (eq .Section "posts") }}
+{{- if and $showLikes (or $onPost .IsHome) }}
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -13,8 +15,22 @@
     measurementId: "{{ site.Params.firebase.measurementId }}"
   };
 </script>
+{{- if $onPost }}
 {{- $likes := resources.Get "js/likes.js" | minify }}
 <script src="{{ $likes.RelPermalink }}" defer></script>
+{{- end }}
+{{- if .IsHome }}
+<script>
+  if (typeof firebase !== "undefined" && typeof firebaseConfig !== "undefined" && !firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+</script>
+{{- $homeSort := resources.Get "js/home-sort.js" | minify }}
+<script src="{{ $homeSort.RelPermalink }}" defer></script>
+{{- end }}
+{{- else if .IsHome }}
+{{- $homeSort := resources.Get "js/home-sort.js" | minify }}
+<script src="{{ $homeSort.RelPermalink }}" defer></script>
 {{- end -}}
 {{- if and .IsPage (eq .Section "posts") site.Params.postAside }}
 {{- $aside := resources.Get "js/post-aside.js" | minify }}

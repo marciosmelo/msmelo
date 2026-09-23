@@ -306,6 +306,66 @@ body {
   letter-spacing: 0.04em;
 }
 
+.home-sort {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.15rem 0 0.15rem;
+  font-family: var(--font-ui);
+}
+
+.home-sort__btn {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font: inherit;
+  font-size: 0.92rem;
+  color: var(--secondary);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  cursor: pointer;
+  line-height: 1.3;
+}
+
+.home-sort__btn:hover {
+  border-color: var(--secondary);
+  color: var(--primary);
+}
+
+.home-sort__btn.is-active {
+  color: var(--primary);
+  border-color: var(--primary);
+  font-weight: 600;
+}
+
+.home-sort__hint {
+  font-weight: 400;
+  font-size: 0.85em;
+  color: var(--secondary);
+}
+
+.post-meta-likes {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.post-meta-likes__icon {
+  width: 0.85em;
+  height: 0.85em;
+  flex-shrink: 0;
+  position: relative;
+  top: 0.05em;
+}
+
+.post-meta-likes__n {
+  font-variant-numeric: tabular-nums;
+}
+
 .home-more {
   margin: 1.75rem 0 0.5rem;
   text-align: center;
