@@ -1,0 +1,10 @@
+{{- $id := "" -}}
+{{- with .File -}}
+  {{- $path := .Path -}}
+  {{- range $.AllTranslations -}}
+    {{- $lang := printf ".%s.md" .Lang -}}
+    {{- $path = replace $path $lang ".md" -}}
+  {{- end -}}
+  {{- $id = printf "likes_%s" $path -}}
+{{- end -}}
+{{- return $id -}}

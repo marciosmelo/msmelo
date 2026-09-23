@@ -5,28 +5,49 @@
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
 {{- $limit := site.Params.homeRecentCount | default 5 }}
-{{- $pages = first $limit $pages }}
+{{- $showLikes := and site.Params.ShowLikes site.Params.firebase }}
 
-{{- range $pages }}
-<article class="post-entry">
-  {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
-  {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
+{{- if gt (len $pages) 1 }}
+<div class="home-sort" role="group" aria-label="Ordenar posts">
+  <button type="button" class="home-sort__btn is-active" data-sort="date" aria-pressed="true">
+    Publicação
+    <span class="home-sort__hint" data-date-hint>mais novos</span>
+  </button>
+  {{- if $showLikes }}
+  <button type="button" class="home-sort__btn" data-sort="likes" aria-pressed="false">
+    Mais curtidos
+  </button>
+  {{- end }}
+</div>
+{{- end }}
+
+<div class="home-posts" id="home-posts" data-limit="{{ $limit }}">
+{{- range $index, $page := $pages }}
+{{- $likeOid := partial "like_oid.html" $page }}
+{{- $likeId := replace $likeOid "/" "-" }}
+<article class="post-entry" data-date="{{ $page.Date.Unix }}"{{ with $likeId }} data-like-id="{{ . }}"{{ end }}{{ if ge $index $limit }} hidden{{ end }}>
+  {{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false }}
+  {{- partial "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden) }}
   <header class="entry-header">
-    <h2 class="entry-hint-parent">{{ .Title }}</h2>
+    <h2 class="entry-hint-parent">{{ $page.Title }}</h2>
   </header>
-  {{- if (ne (.Param "hideSummary") true) }}
+  {{- if (ne ($page.Param "hideSummary") true) }}
   <div class="entry-content">
-    <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+    <p>{{ $page.Summary | plainify | htmlUnescape }}{{ if $page.Truncated }}...{{ end }}</p>
   </div>
   {{- end }}
-  {{- if not (.Param "hideMeta") }}
+  {{- if not ($page.Param "hideMeta") }}
   <footer class="entry-footer">
-    {{- partial "post_meta.html" . -}}
+    {{- partial "post_meta.html" $page -}}
+    {{- if and $showLikes $likeId }}
+    &nbsp;·&nbsp;<span class="post-meta-likes" title="curtidas"><svg class="post-meta-likes__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg><span class="post-meta-likes__n">…</span></span>
+    {{- end }}
   </footer>
   {{- end }}
-  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+  <a class="entry-link" aria-label="post link to {{ $page.Title | plainify }}" href="{{ $page.Permalink }}"></a>
 </article>
 {{- end }}
+</div>
 
 <p class="home-more">
   <a href="{{ "/posts/" | relLangURL }}">Ver todos os posts →</a>
