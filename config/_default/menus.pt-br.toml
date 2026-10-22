@@ -24,8 +24,9 @@ title = "Contos e histórias maiores em escritos.msmelo.blog"
 
 [[main]]
 name = "Newsletter"
-url = "https://marciosmelo.substack.com"
+url = "https://msmelo.art.br/"
 weight = 40
+title = "Newsletter Imagina Só em msmelo.art.br"
 
 [[main]]
 name = "Blogroll"

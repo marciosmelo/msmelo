@@ -10,7 +10,7 @@ cascade:
   invertPagination: true
 ---
 
-Minhas histórias publicadas por aí.
+Minhas histórias publicadas por aí. O catálogo também está em [msmelo.art.br/livros](https://msmelo.art.br/livros/).
 
 # Livros Publicados
 
