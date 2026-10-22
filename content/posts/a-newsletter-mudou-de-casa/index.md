@@ -1,18 +1,25 @@
 ---
 title: "A newsletter mudou de casa"
-summary: "Saiu do Substack. Mora em msmelo.art.br. O blog continua sendo o blog."
+summary: "Tirei as malas do Substack. O blog continua aqui, com a mesma cara de 2003."
 date: 2026-10-22
 author: "M. S. Melo"
 draft: false
 tags: ["cronicas"]
+featured_image: "featured.jpg"
+cover:
+  image: "featured.jpg"
+  alt: "Casinha vermelha sozinha no alto de um morro"
 ---
 
-A newsletter não mora mais no Substack.
+Tirei a newsletter do Substack.
 
-Os textos longos, os livros, o cara que escreve — isso agora é [msmelo.art.br](https://msmelo.art.br/). Chama **Imagina Só**. Dá para assinar. Dá para ler sem assinar também.
+Não foi da noite para o dia, apesar de parecer. Toda vez que ia sair, aparecia uma lâmpada da varanda, um notebook comido de salitre, uma fonte que não era *a fonte*. Eu transformo qualquer mudança de endereço numa jornada intergaláctica. Até que a casa ficou pronta — ou pronta o bastante, que comigo é a mesma coisa.
 
-Este sítio continua o que sempre foi: crônica curta, Literoutubro, o blogroll, a vibe início dos anos 2000. Ninguém vai tirar isso daqui.
+Agora ela mora em [msmelo.art.br](https://msmelo.art.br/). Chama **Imagina Só**. São os textos mais longos, os livros, aquele formulário de contato que eu desconfio que ninguém preenche. Quem quiser receber no emelho, assina. Quem não quiser, entra e lê. Eu não vou ficar no seu pé. Bom, um pouco eu fico.
 
-Contos e histórias para ler sentado seguem no [escritos](https://escritos.msmelo.blog/contos). Por enquanto.
+Este blog eu não vou mexer. Continua crônica curta, Literoutubro, o blogroll que eu atualizo quando lembro. A mesma cara de 2003. Gosto dela. Já tentei sofisticar. Não deu.
 
-Se você vinha pelo Substack, o endereço novo é esse: [msmelo.art.br](https://msmelo.art.br/).
+Os contos pra ler sentado seguem no [escritos](https://escritos.msmelo.blog/contos). Sim, são três sítios. Um dia eu junto. Hoje não.
+
+---
+📷 Foto no [Unsplash](https://unsplash.com)
