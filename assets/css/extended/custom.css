@@ -396,10 +396,6 @@ body {
   background: transparent;
 }
 
-#menu a[href*="escritos.msmelo.blog"] {
-  font-weight: 700;
-}
-
 .post-single .entry-cover {
   overflow: hidden;
   border-radius: var(--radius);

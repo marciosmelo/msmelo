@@ -15,11 +15,11 @@ Tirei a newsletter do Substack.
 
 Não foi da noite para o dia, apesar de parecer. Toda vez que ia sair, aparecia uma lâmpada da varanda, um notebook comido de salitre, uma fonte que não era *a fonte*. Eu transformo qualquer mudança de endereço numa jornada intergaláctica. Até que a casa ficou pronta — ou pronta o bastante, que comigo é a mesma coisa.
 
-Agora ela mora em [msmelo.art.br](https://msmelo.art.br/). Chama **Imagina Só**. São os textos mais longos, os livros, aquele formulário de contato que eu desconfio que ninguém preenche. Quem quiser receber no emelho, assina. Quem não quiser, entra e lê. Eu não vou ficar no seu pé. Bom, um pouco eu fico.
+Agora ela mora em [msmelo.art.br](https://msmelo.art.br/). Continua **Imagina Só**. O nome não mudou, só o endereço. São os textos mais longos, os livros, aquele formulário de contato que eu desconfio que ninguém preenche. Quem quiser receber no emelho, assina. Quem não quiser, entra e lê. Eu não vou ficar no seu pé. Bom, um pouco eu fico.
 
 Este blog eu não vou mexer. Continua crônica curta, Literoutubro, o blogroll que eu atualizo quando lembro. A mesma cara de 2003. Gosto dela. Já tentei sofisticar. Não deu.
 
-Os contos pra ler sentado seguem no [escritos](https://escritos.msmelo.blog/contos). Sim, são três sítios. Um dia eu junto. Hoje não.
+Dois sítios. Chega.
 
 ---
 📷 Foto no [Unsplash](https://unsplash.com)

@@ -4,7 +4,7 @@ Site pessoal de **M. S. Melo**, construído com [Hugo](https://gohugo.io/) e o t
 
 ## Sobre
 
-Crônicas, contos, causos e ensaios. Contos maiores também em [escritos.msmelo.blog](https://escritos.msmelo.blog/contos).
+Crônicas, causos e ensaios. A newsletter **Imagina Só** mora em [msmelo.art.br](https://msmelo.art.br/).
 
 Online: [msmelo.blog](https://msmelo.blog).
 

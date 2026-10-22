@@ -10,7 +10,7 @@ Este canto é o diário: crônicas curtas, causos, o blogroll. Sem a mão invis�
 
 Aqui ficam os [textos curtos](/posts/), o [blogroll](/blogroll/) e o [Motor de Tramas](/tramas/).
 
-A newsletter **Imagina Só**, os livros e a casa literária moram em [msmelo.art.br](https://msmelo.art.br/). Contos e histórias maiores, em [escritos.msmelo.blog](https://escritos.msmelo.blog/contos).
+A newsletter **Imagina Só**, os livros e a casa literária moram em [msmelo.art.br](https://msmelo.art.br/).
 
 ## Publicações
 
@@ -25,7 +25,6 @@ Livros e antologias; detalhes e links de compra em [Livros](/livros/) — o cat�
 ## Por aí
 
 - Newsletter: [msmelo.art.br](https://msmelo.art.br/)
-- Ficção: [escritos.msmelo.blog](https://escritos.msmelo.blog/contos)
 - Mastodon: [@msmelo@bolha.one](https://bolha.one/@msmelo)
 - Neste site: [últimas postagens](/posts/) · [RSS](/index.xml)
 

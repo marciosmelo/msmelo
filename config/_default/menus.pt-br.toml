@@ -17,12 +17,6 @@ pageRef = "/livros"
 weight = 20
 
 [[main]]
-name = "Contos"
-url = "https://escritos.msmelo.blog/contos"
-weight = 30
-title = "Contos e histórias maiores em escritos.msmelo.blog"
-
-[[main]]
 name = "Newsletter"
 url = "https://msmelo.art.br/"
 weight = 40
