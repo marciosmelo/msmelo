@@ -18,7 +18,7 @@ hideMeta = false
 hideSummary = false
 ShowFullTextinRSS = false
 mainSections = ["posts"]
-homeRecentCount = 5
+homeRecentCount = 8
 ShowLikes = true
 
 fediverseCreator = "@msmelo@bolha.one"

@@ -4,6 +4,10 @@ date: 2024-01-15
 draft: false
 tags: ["posts"]
 summary: "Propositalmente ele vai ser assim mesmo, nessa vibe início dos anos 2000."
+featured_image: "featured.jpg"
+cover:
+  image: "featured.jpg"
+  alt: "Computador antigo sobre uma mesa de madeira, com uma xícara e um livro"
 ---
 Olá mundo, este é o meu novo 🏡 **sítio particular**. 
 
@@ -16,5 +20,7 @@ Ele é bem simples, escrevo os textos basicamente num bloco de notas. Depois que
 ---
 Para fechar, deixo um trecho de uma grande poesia baiana criada pelo conjunto musical e artístico **Pagodart**:
 
-> Que ovo é esse, Hambúrguer? Parece até de avestruz... 
+> Que ovo é esse, Hambúrguer? Parece até de avestruz...
+
+📷 Foto de [Ansel Lee](https://www.pexels.com/photo/vintage-computer-on-wooden-desk-17269117/) 
 
