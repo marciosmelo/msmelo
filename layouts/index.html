@@ -21,7 +21,7 @@
 </div>
 {{- end }}
 
-<div class="home-posts" id="home-posts" data-limit="{{ $limit }}">
+<div class="home-posts" id="home-posts" data-page-size="{{ $limit }}">
 {{- range $index, $page := $pages }}
 {{- $likeOid := partial "like_oid.html" $page }}
 {{- $likeId := replace $likeOid "/" "-" }}
@@ -48,6 +48,12 @@
 </article>
 {{- end }}
 </div>
+
+<nav class="home-pager" id="home-pager" aria-label="Paginação dos posts" hidden>
+  <button type="button" class="prev" data-page="prev">«&nbsp;Anterior</button>
+  <span class="home-pager__status" data-page-status aria-live="polite"></span>
+  <button type="button" class="next" data-page="next">Próxima&nbsp;»</button>
+</nav>
 
 <p class="home-more">
   <a href="{{ "/posts/" | relLangURL }}">Ver todos os posts →</a>
